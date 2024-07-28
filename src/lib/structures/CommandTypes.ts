@@ -1,5 +1,5 @@
 import type { Piece } from '@sapphire/pieces';
-import type { OptionValues } from 'commander';
+import type { Options } from 'commander';
 
 export interface CommandRunParameters<Args extends [string, unknown][]> {
 	/**
@@ -10,7 +10,7 @@ export interface CommandRunParameters<Args extends [string, unknown][]> {
 	/**
 	 * The options, if any.
 	 */
-	options: OptionValues;
+	options: Options;
 }
 
 /**

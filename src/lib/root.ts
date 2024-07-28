@@ -1,7 +1,7 @@
 import '#commands/_load';
 
 import type { Logger } from '@skyra/logger';
-import type { OptionValues } from 'commander';
+import type { Options } from 'commander';
 import type { CommandStore } from '#lib/structures/CommandStore';
 
 export default {};
@@ -9,7 +9,7 @@ export default {};
 declare module '@sapphire/pieces' {
 	interface Container {
 		logger: Logger;
-		options: OptionValues;
+		options: Options;
 	}
 
 	interface StoreRegistryEntries {
