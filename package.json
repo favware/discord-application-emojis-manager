@@ -38,7 +38,7 @@
 		"@favware/cliff-jumper": "^4.0.3",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
-		"eslint": "^8.57.0",
+		"eslint": "^9.8.0",
 		"eslint-config-neon": "^0.1.62",
 		"eslint-formatter-pretty": "5.0.0",
 		"eslint-plugin-prettier": "^5.2.1",
