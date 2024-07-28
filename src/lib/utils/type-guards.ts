@@ -1,6 +1,6 @@
-import type { OptionValues } from 'commander';
+import type { Options } from 'commander';
 
-export function isOptionsObject(possibleOptions: unknown): possibleOptions is OptionValues {
+export function isOptionsObject(possibleOptions: unknown): possibleOptions is Options {
 	return (
 		typeof possibleOptions === 'object' &&
 		possibleOptions !== null &&
