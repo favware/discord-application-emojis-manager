@@ -658,6 +658,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sapphire/discord-utilities@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@sapphire/discord-utilities@npm:3.3.0"
+  dependencies:
+    discord-api-types: "npm:^0.37.84"
+  checksum: 10c0/31018424df968a81edbc48eaba2a2a4dc3f71f783c0f936733a940e9be2494361a72fbab97cd19f5d4ceb939f7835e6ee794d472facc2b19bc9d239bec272551
+  languageName: node
+  linkType: hard
+
 "@sapphire/node-utilities@npm:^1.0.2":
   version: 1.0.2
   resolution: "@sapphire/node-utilities@npm:1.0.2"
@@ -1773,6 +1782,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:^19.2.2"
     "@discordjs/rest": "npm:^2.3.0"
     "@favware/cliff-jumper": "npm:^4.0.3"
+    "@sapphire/discord-utilities": "npm:^3.3.0"
     "@sapphire/node-utilities": "npm:^1.0.2"
     "@sapphire/pieces": "npm:^4.3.1"
     "@sapphire/prettier-config": "npm:^2.0.0"
