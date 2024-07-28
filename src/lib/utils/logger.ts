@@ -7,5 +7,11 @@ export function setupLoggerAndLogOptions<Args extends [string, unknown][]>(runAr
 
 	container.logger = logger;
 
-	container.logger.debug('resolved options: ', JSON.stringify(runArgs, null, 2));
+	const clonedRunArgs = JSON.parse(JSON.stringify(runArgs)) as typeof runArgs;
+
+	if (clonedRunArgs.options.token) {
+		clonedRunArgs.options.token = 'REDACTED';
+	}
+
+	container.logger.debug('resolved options: ', JSON.stringify(clonedRunArgs, null, 2));
 }
