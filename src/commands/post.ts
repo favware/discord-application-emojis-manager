@@ -1,16 +1,14 @@
-// @ts-nocheck asd
 import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { basename, extname, isAbsolute, join } from 'node:path';
 import { cwd, exit } from 'node:process';
-import { fetch, FetchMediaContentTypes, FetchMethods, FetchResultTypes } from '@sapphire/fetch';
 import { findFilesRecursivelyRegex } from '@sapphire/node-utilities';
 import { container } from '@sapphire/pieces';
-import { type APIEmoji, RouteBases, Routes } from 'discord-api-types/v10';
+import { type APIEmoji, type RESTGetAPIApplicationEmojisResult, Routes } from 'discord-api-types/v10';
 import { Command } from '#lib/structures/Command';
 import { checkPathIsInArgs } from '#lib/utils/checks';
-import { DiscordRequestHeaders, IMAGE_EXTENSION } from '#lib/utils/constants';
-import { getToken } from '#lib/utils/utils';
+import { IMAGE_EXTENSION } from '#lib/utils/constants';
+import { handleError } from '#lib/utils/error-handler';
 
 type Args = [['path', string]];
 
@@ -39,37 +37,48 @@ export class PostEmojis extends Command<Args> {
 		}
 
 		const promises: Promise<APIEmoji>[] = [];
+		let currentEmojis: RESTGetAPIApplicationEmojisResult | null = null;
 
-		for await (const file of findFilesRecursivelyRegex(imagesPath, IMAGE_EXTENSION)) {
-			const extension = extname(file);
-			const name = basename(file, extension);
-			this.container.logger.debug(`Uploading emoji ${name}`);
-
-			const mimeType = this.extensionToMimeType(extension);
-			const imageBase64 = await this.readImageFile(file);
-			const image = `data:${mimeType};base64,${imageBase64}`;
-
-			promises.push(
-				fetch<APIEmoji>(
-					RouteBases.api + Routes.applicationEmojis(options.applicationId),
-					{
-						method: FetchMethods.Post,
-						body: JSON.stringify({
-							name,
-							image
-						}),
-						headers: {
-							...DiscordRequestHeaders,
-							'Content-Type': FetchMediaContentTypes.JSON,
-							Authorization: getToken(options)
-						}
-					},
-					FetchResultTypes.JSON
-				)
-			);
+		try {
+			currentEmojis = (await this.container.rest.get(Routes.applicationEmojis(options.applicationId))) as RESTGetAPIApplicationEmojisResult;
+		} catch (error) {
+			handleError(error as Error);
 		}
 
-		await Promise.all(promises);
+		if (currentEmojis) {
+			const currentEmojiNames = currentEmojis.items.map((emoji) => emoji.name);
+
+			for await (const file of findFilesRecursivelyRegex(imagesPath, IMAGE_EXTENSION)) {
+				const extension = extname(file);
+				const name = basename(file, extension);
+
+				if (currentEmojiNames.includes(name)) {
+					this.container.logger.info(`Skipping emoji "${name}" because an emoji with that name already exists`);
+					continue;
+				}
+
+				this.container.logger.info(`Queueing emoji "${name}" for uploading`);
+
+				const mimeType = this.extensionToMimeType(extension);
+				const imageBase64 = await this.readImageFile(file);
+				const image = `data:${mimeType};base64,${imageBase64}`;
+
+				promises.push(
+					this.container.rest.post(Routes.applicationEmojis(options.applicationId), {
+						body: {
+							name,
+							image
+						}
+					}) as Promise<APIEmoji>
+				);
+			}
+
+			try {
+				await Promise.all(promises);
+			} catch (error) {
+				handleError(error as Error);
+			}
+		}
 	}
 
 	private async readImageFile(file: string): Promise<string> {
@@ -84,12 +93,12 @@ export class PostEmojis extends Command<Args> {
 	private extensionToMimeType(extension: string) {
 		switch (extension) {
 			case '.png':
-				return FetchMediaContentTypes.ImagePNG;
+				return 'image/png';
 			case '.jpg':
 			case '.jpeg':
-				return FetchMediaContentTypes.ImageJPEG;
+				return 'image/jpeg';
 			case '.gif':
-				return FetchMediaContentTypes.ImageGIF;
+				return 'image/gif';
 			default:
 				this.container.logger.fatal('Unsupported file extension detected in the images directory, please validate the files.');
 				exit(1);
