@@ -1,5 +1,5 @@
 {
-	"name": "discord-application-emoji-manager",
+	"name": "discord-application-emojis-manager",
 	"description": "A NodeJS CLI to manage emojis for Discord Applications",
 	"license": "MIT",
 	"private": true,
@@ -8,7 +8,7 @@
 	"main": "dist/index.js",
 	"bin": {
 		"daem": "./dist/index.js",
-		"discord-application-emoji-manager": "./dist/index.js"
+		"discord-application-emojis-manager": "./dist/index.js"
 	},
 	"imports": {
 		"#commands/*": "./dist/commands/*.js",

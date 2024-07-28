@@ -4,8 +4,8 @@
 
 **A NodeJS CLI to manage emojis for Discord Applications**
 
-[![GitHub](https://img.shields.io/github/license/favware/discord-application-emoji-manager)](https://github.com/favware/discord-application-emoji-manager/blob/main/LICENSE)
-[![npm](https://img.shields.io/npm/v/@favware/discord-application-emoji-manager?color=crimson&logo=npm)](https://www.npmjs.com/package/@favware/discord-application-emoji-manager)
+[![GitHub](https://img.shields.io/github/license/favware/discord-application-emojis-manager)](https://github.com/favware/discord-application-emojis-manager/blob/main/LICENSE)
+[![npm](https://img.shields.io/npm/v/@favware/discord-application-emojis-manager?color=crimson&logo=npm)](https://www.npmjs.com/package/@favware/discord-application-emojis-manager)
 
 [![Support Server](https://discord.com/api/guilds/512303595966824458/embed.png?style=banner2)](https://join.favware.tech)
 
@@ -25,26 +25,26 @@ You can use the following command to install this package, or replace
 `npm install -D` with your package manager of choice.
 
 ```sh
-npm install -D @favware/discord-application-emoji-manager
+npm install -D @favware/discord-application-emojis-manager
 ```
 
 Or install it globally:
 
 ```sh
-npm install -g @favware/discord-application-emoji-manager
+npm install -g @favware/discord-application-emojis-manager
 ```
 
-Then call the script with `discord-application-emoji-manager` or `daem`:
+Then call the script with `discord-application-emojis-manager` or `daem`:
 
 ```sh
-discord-application-emoji-manager <command> <args...> --token "your-discord-token" --application-id "your application id"
+discord-application-emojis-manager <command> <args...> --token "your-discord-token" --application-id "your application id"
 daem <command> <args...> --token "your-discord-token" --application-id "your application id"
 ```
 
 Alternatively you can call the CLI directly with `npx`:
 
 ```sh
-npx @favware/discord-application-emoji-manager <command> <args...> --token "your-discord-token" --application-id "your application id"
+npx @favware/discord-application-emojis-manager <command> <args...> --token "your-discord-token" --application-id "your application id"
 ```
 
 ## Usage
@@ -59,7 +59,7 @@ listed below.
 > and `APPLICATION_ID` respectively.
 
 ```sh
-Usage:  discord-application-emoji-manager [options] [command]
+Usage:  discord-application-emojis-manager [options] [command]
 
 Options:
   -h, --help                   display help for command
@@ -78,7 +78,7 @@ Commands:
 ### `delete`
 
 ```sh
-Usage:  discord-application-emoji-manager delete [options] <id>
+Usage:  discord-application-emojis-manager delete [options] <id>
 
 Deletes an emoji from the server
 
@@ -98,7 +98,7 @@ Options:
 ### `delete-all`
 
 ```sh
-Usage:  discord-application-emoji-manager delete-all [options]
+Usage:  discord-application-emojis-manager delete-all [options]
 
 Deletes all emoji from the server
 
@@ -115,7 +115,7 @@ Options:
 ### `get`
 
 ```sh
-Usage:  discord-application-emoji-manager get [options] <id>
+Usage:  discord-application-emojis-manager get [options] <id>
 
 Gets a single emojis from the server in JSON format
 
@@ -135,7 +135,7 @@ Options:
 ### `list`
 
 ```sh
-Usage:  discord-application-emoji-manager list [options]
+Usage:  discord-application-emojis-manager list [options]
 
 Lists all emojis from the server in JSON format
 
@@ -152,7 +152,7 @@ Options:
 ### `patch`
 
 ```sh
-Usage:  discord-application-emoji-manager patch [options] <id> <name>
+Usage:  discord-application-emojis-manager patch [options] <id> <name>
 
 Patches an emoji on the server provided the emoji id and a new name for the emoji
 
@@ -173,7 +173,7 @@ Options:
 ### `post`
 
 ```sh
-Usage:  discord-application-emoji-manager post [options] <path>
+Usage:  discord-application-emojis-manager post [options] <path>
 
 Posts all emoji in the input directory to the server
 

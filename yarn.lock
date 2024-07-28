@@ -1774,9 +1774,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-application-emoji-manager@workspace:.":
+"discord-application-emojis-manager@workspace:.":
   version: 0.0.0-use.local
-  resolution: "discord-application-emoji-manager@workspace:."
+  resolution: "discord-application-emojis-manager@workspace:."
   dependencies:
     "@commitlint/cli": "npm:^19.3.0"
     "@commitlint/config-conventional": "npm:^19.2.2"
@@ -1802,7 +1802,7 @@ __metadata:
     typescript: "npm:^5.5.4"
   bin:
     daem: ./dist/index.js
-    discord-application-emoji-manager: ./dist/index.js
+    discord-application-emojis-manager: ./dist/index.js
   languageName: unknown
   linkType: soft
 

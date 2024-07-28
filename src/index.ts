@@ -22,7 +22,7 @@ await container.stores.get('commands').loadAll();
 
 const rootCommand = new CommanderCommand() //
 	.version(packageJson.version)
-	.command('discord-application-emoji-manager');
+	.command('discord-application-emojis-manager');
 
 const commanderCommands: CommanderCommand[] = [];
 
