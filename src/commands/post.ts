@@ -7,9 +7,9 @@ import { container } from '@sapphire/pieces';
 import { type APIEmoji, Routes } from 'discord-api-types/v10';
 import { Command } from '#lib/structures/Command';
 import { checkPathIsInArgs } from '#lib/utils/checks';
-import { IMAGE_EXTENSION } from '#lib/utils/constants';
+import { validImageExtensions } from '#lib/utils/constants';
 import { handleError } from '#lib/utils/error-handler';
-import { getCurrentEmojis } from '#lib/utils/get-current-emoji-names';
+import { getCurrentEmojis } from '#lib/utils/get-current-emojis';
 
 type Args = [['path', string]];
 
@@ -42,7 +42,7 @@ export class PostEmojis extends Command<Args> {
 		let skippedCount = 0;
 		let filesCount = 0;
 
-		for await (const file of findFilesRecursivelyRegex(imagesPath, IMAGE_EXTENSION)) {
+		for await (const file of findFilesRecursivelyRegex(imagesPath, validImageExtensions)) {
 			filesCount++;
 
 			const extension = extname(file);

@@ -12,4 +12,4 @@ export const packageJson = JSON.parse(await readFile(packageFile, 'utf8'));
  * - png
  * - gif
  */
-export const IMAGE_EXTENSION = /\.(?<extension>jpe?g|png|gif)$/i;
+export const validImageExtensions = /\.(?<extension>jpe?g|png|gif)$/i;
