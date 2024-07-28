@@ -1,5 +1,5 @@
 import { existsSync } from 'node:fs';
-import { readFile } from 'node:fs/promises';
+import { readFile, stat } from 'node:fs/promises';
 import { basename, extname, isAbsolute, join } from 'node:path';
 import { cwd, exit } from 'node:process';
 import { findFilesRecursivelyRegex } from '@sapphire/node-utilities';
@@ -46,15 +46,22 @@ export class PostEmojis extends Command<Args> {
 			filesCount++;
 
 			const extension = extname(file);
-			const name = basename(file, extension);
+			const name = basename(file);
+			const nameWithoutExtension = basename(file, extension);
 
-			if (currentEmojis.some((emoji) => emoji.name === name)) {
+			if (await this.fileIsLargerThanThreshold(file)) {
+				this.container.logger.info(`Skipping emoji "${name}" because it is larger than 256 KiB`);
+				skippedCount++;
+				continue;
+			}
+
+			if (currentEmojis.some((emoji) => emoji.name === nameWithoutExtension)) {
 				this.container.logger.info(`Skipping emoji "${name}" because an emoji with that name already exists`);
 				skippedCount++;
 				continue;
 			}
 
-			this.container.logger.info(`Queueing emoji "${name}" for uploading`);
+			this.container.logger.info(`Queueing emoji "${nameWithoutExtension}" for uploading`);
 
 			const mimeType = this.extensionToMimeType(extension);
 			const imageBase64 = await this.readImageFile(file);
@@ -63,7 +70,7 @@ export class PostEmojis extends Command<Args> {
 			promises.push(
 				this.container.rest.post(Routes.applicationEmojis(options.applicationId), {
 					body: {
-						name,
+						name: nameWithoutExtension,
 						image
 					}
 				}) as Promise<APIEmoji>
@@ -81,6 +88,12 @@ export class PostEmojis extends Command<Args> {
 		} catch (error) {
 			handleError(error as Error);
 		}
+	}
+
+	private async fileIsLargerThanThreshold(file: string): Promise<boolean> {
+		const statData = await stat(file);
+		const fileSizeInKiB = statData.size / 1_024;
+		return fileSizeInKiB > 256;
 	}
 
 	private async readImageFile(file: string): Promise<string> {
