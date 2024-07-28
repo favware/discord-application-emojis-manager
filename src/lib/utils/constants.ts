@@ -11,3 +11,12 @@ export const DiscordRequestHeaders = {
 	'User-Agent': `Favware Discord Application Emoji Manager/${packageJson.version} (undici) ${platform()}/${release()} (https://github.com/favware/discord-application-emoji-manager/tree/main)`,
 	Accept: FetchMediaContentTypes.JSON
 };
+
+/**
+ * Image extensions:
+ * - jpg
+ * - jpeg
+ * - png
+ * - gif
+ */
+export const IMAGE_EXTENSION = /\.(?<extension>jpe?g|png|gif)$/i;
