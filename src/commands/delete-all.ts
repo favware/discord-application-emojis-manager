@@ -2,7 +2,7 @@ import { container } from '@sapphire/pieces';
 import { Routes } from 'discord-api-types/v10';
 import { Command } from '#lib/structures/Command';
 import { handleError } from '#lib/utils/error-handler';
-import { getCurrentEmojis } from '#lib/utils/get-current-emoji-names';
+import { getCurrentEmojis } from '#lib/utils/get-current-emojis';
 
 export class DeleteEmojis extends Command<never> {
 	public constructor(context: Command.LoaderContext) {

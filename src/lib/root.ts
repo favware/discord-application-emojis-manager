@@ -2,7 +2,6 @@ import '#commands/_load';
 
 import type { REST } from '@discordjs/rest';
 import type { Logger } from '@skyra/logger';
-import type { Options } from 'commander';
 import type { CommandStore } from '#lib/structures/CommandStore';
 
 export default {};
@@ -10,7 +9,6 @@ export default {};
 declare module '@sapphire/pieces' {
 	interface Container {
 		logger: Logger;
-		options: Options;
 		rest: REST;
 	}
 

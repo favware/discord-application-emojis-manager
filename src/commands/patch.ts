@@ -4,7 +4,7 @@ import { Routes } from 'discord-api-types/v10';
 import { Command } from '#lib/structures/Command';
 import { checksNameOrIdIsInArgs } from '#lib/utils/checks';
 import { handleError } from '#lib/utils/error-handler';
-import { getIdForPossibleName } from '#lib/utils/get-current-emoji-names';
+import { getIdForPossibleName } from '#lib/utils/get-current-emojis';
 
 type Args = [['nameOrId', Snowflake], ['name', string]];
 
