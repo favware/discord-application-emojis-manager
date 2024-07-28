@@ -1,0 +1,16 @@
+{
+	"extends": ["@sapphire/ts-config", "@sapphire/ts-config/extra-strict", "@sapphire/ts-config/verbatim"],
+	"compilerOptions": {
+		"rootDir": "src",
+		"outDir": "dist",
+		"tsBuildInfoFile": "dist/.tsbuildinfo",
+		"module": "NodeNext",
+		"baseUrl": "src"
+	},
+	"paths": {
+		"#commands/*": ["commands/*"],
+		"#lib/*": ["lib/*"],
+		"#root/*": ["*"]
+	},
+	"include": ["src"]
+}
