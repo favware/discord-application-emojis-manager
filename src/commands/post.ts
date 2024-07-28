@@ -4,11 +4,12 @@ import { basename, extname, isAbsolute, join } from 'node:path';
 import { cwd, exit } from 'node:process';
 import { findFilesRecursivelyRegex } from '@sapphire/node-utilities';
 import { container } from '@sapphire/pieces';
-import { type APIEmoji, type RESTGetAPIApplicationEmojisResult, Routes } from 'discord-api-types/v10';
+import { type APIEmoji, Routes } from 'discord-api-types/v10';
 import { Command } from '#lib/structures/Command';
 import { checkPathIsInArgs } from '#lib/utils/checks';
 import { IMAGE_EXTENSION } from '#lib/utils/constants';
 import { handleError } from '#lib/utils/error-handler';
+import { getCurrentEmojis } from '#lib/utils/get-current-emoji-names';
 
 type Args = [['path', string]];
 
@@ -37,47 +38,38 @@ export class PostEmojis extends Command<Args> {
 		}
 
 		const promises: Promise<APIEmoji>[] = [];
-		let currentEmojis: RESTGetAPIApplicationEmojisResult | null = null;
+		const currentEmojis = await getCurrentEmojis(options);
 
-		try {
-			currentEmojis = (await this.container.rest.get(Routes.applicationEmojis(options.applicationId))) as RESTGetAPIApplicationEmojisResult;
-		} catch (error) {
-			handleError(error as Error);
+		for await (const file of findFilesRecursivelyRegex(imagesPath, IMAGE_EXTENSION)) {
+			const extension = extname(file);
+			const name = basename(file, extension);
+
+			if (currentEmojis.some((emoji) => emoji.name === name)) {
+				this.container.logger.info(`Skipping emoji "${name}" because an emoji with that name already exists`);
+				continue;
+			}
+
+			this.container.logger.info(`Queueing emoji "${name}" for uploading`);
+
+			const mimeType = this.extensionToMimeType(extension);
+			const imageBase64 = await this.readImageFile(file);
+			const image = `data:${mimeType};base64,${imageBase64}`;
+
+			promises.push(
+				this.container.rest.post(Routes.applicationEmojis(options.applicationId), {
+					body: {
+						name,
+						image
+					}
+				}) as Promise<APIEmoji>
+			);
 		}
 
-		if (currentEmojis) {
-			const currentEmojiNames = currentEmojis.items.map((emoji) => emoji.name);
-
-			for await (const file of findFilesRecursivelyRegex(imagesPath, IMAGE_EXTENSION)) {
-				const extension = extname(file);
-				const name = basename(file, extension);
-
-				if (currentEmojiNames.includes(name)) {
-					this.container.logger.info(`Skipping emoji "${name}" because an emoji with that name already exists`);
-					continue;
-				}
-
-				this.container.logger.info(`Queueing emoji "${name}" for uploading`);
-
-				const mimeType = this.extensionToMimeType(extension);
-				const imageBase64 = await this.readImageFile(file);
-				const image = `data:${mimeType};base64,${imageBase64}`;
-
-				promises.push(
-					this.container.rest.post(Routes.applicationEmojis(options.applicationId), {
-						body: {
-							name,
-							image
-						}
-					}) as Promise<APIEmoji>
-				);
-			}
-
-			try {
-				await Promise.all(promises);
-			} catch (error) {
-				handleError(error as Error);
-			}
+		try {
+			await Promise.all(promises);
+			this.container.logger.info('Uploaded all emoji successfully');
+		} catch (error) {
+			handleError(error as Error);
 		}
 	}
 
