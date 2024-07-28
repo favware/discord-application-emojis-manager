@@ -28,6 +28,7 @@ for (const command of container.stores.get('commands').values()) {
 	const subcommand = new CommanderCommand() //
 		.command(command.name)
 		.description(command.description)
+		.copyInheritedSettings(rootCommand)
 		.option(
 			'-t, --token <string>',
 			'The token of your Discord bot to authenticate with. You can also provide this with the DISCORD_TOKEN environment variable.',
