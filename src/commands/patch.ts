@@ -2,7 +2,7 @@ import { container } from '@sapphire/pieces';
 import type { Snowflake } from 'discord-api-types/globals';
 import { Routes } from 'discord-api-types/v10';
 import { Command } from '#lib/structures/Command';
-import { checksNameOrIdIsInArgs } from '#lib/utils/checks';
+import { checkNameIsInArgs, checksNameOrIdIsInArgs } from '#lib/utils/checks';
 import { handleError } from '#lib/utils/error-handler';
 import { getIdForPossibleName } from '#lib/utils/get-current-emojis';
 
@@ -28,6 +28,7 @@ export class PatchEmoji extends Command<Args> {
 
 	public override async run({ args, options }: Command.Run<Args>) {
 		checksNameOrIdIsInArgs('get', args.nameOrId);
+		checkNameIsInArgs(args.name);
 
 		const emojiId = await getIdForPossibleName(args.nameOrId, options);
 
