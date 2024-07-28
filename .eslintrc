@@ -14,65 +14,9 @@
 		"project": "./tsconfig.json"
 	},
 	"rules": {
-		"no-extra-label": "warn",
-		"no-iterator": "warn",
-		"no-label-var": "warn",
-		"no-labels": [
-			"warn",
-			{
-				"allowLoop": true,
-				"allowSwitch": true
-			}
-		],
-		"no-lone-blocks": "warn",
-		"no-loop-func": "warn",
-		"no-mixed-operators": [
-			"warn",
-			{
-				"groups": [
-					["&", "|", "^", "~", "<<", ">>", ">>>"],
-					["==", "!=", "===", "!==", ">", ">=", "<", "<="],
-					["&&", "||"],
-					["in", "instanceof"]
-				],
-				"allowSamePrecedence": false
-			}
-		],
-		"no-multi-str": "warn",
-		"rest-spread-spacing": ["warn", "never"],
-		"no-restricted-properties": [
-			"error",
-			{
-				"object": "require",
-				"property": "ensure",
-				"message": "Please use import() instead. More info: https://facebook.github.io/create-react-app/docs/code-splitting"
-			},
-			{
-				"object": "System",
-				"property": "import",
-				"message": "Please use import() instead. More info: https://facebook.github.io/create-react-app/docs/code-splitting"
-			}
-		],
-		"getter-return": "warn",
-		"no-underscore-dangle": "off",
-		"no-restricted-syntax": [
-			"error",
-			{
-				"selector": "ForInStatement",
-				"message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array."
-			},
-			{
-				"selector": "LabeledStatement",
-				"message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
-			},
-			{
-				"selector": "WithStatement",
-				"message": "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
-			}
-		],
-		"class-methods-use-this": "off",
+		"n/no-sync": "off",
+		"n/shebang": "off",
 
-		"@typescript-eslint/consistent-type-definitions": "off",
-		"n/shebang": "off"
+		"@typescript-eslint/consistent-type-definitions": "off"
 	}
 }
