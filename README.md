@@ -1,6 +1,6 @@
 <div align="center">
 
-# Discord Application Emoji Manager
+# Discord Application Emojis Manager
 
 **A NodeJS CLI to manage emojis for Discord Applications**
 
