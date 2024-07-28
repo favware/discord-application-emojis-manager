@@ -1,10 +1,15 @@
 import { exit } from 'node:process';
-import { QueryError } from '@sapphire/fetch';
+import { DiscordAPIError } from '@discordjs/rest';
 import { container } from '@sapphire/pieces';
 
 export function handleError(error: Error) {
-	if (error instanceof QueryError) {
+	if (error instanceof DiscordAPIError) {
 		switch (error.code) {
+			case 400: {
+				badRequest();
+				return;
+			}
+
 			case 401: {
 				invalidTokenProvided();
 				return;
@@ -33,6 +38,11 @@ export function handleError(error: Error) {
 	}
 
 	unknownError();
+}
+
+function badRequest() {
+	container.logger.fatal('The provided query was invalid.');
+	exit(1);
 }
 
 function invalidTokenProvided() {

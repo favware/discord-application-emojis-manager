@@ -9,7 +9,8 @@ import { Command as CommanderCommand, type Options as CommanderOptions } from 'c
 import { CommandStore } from '#lib/structures/CommandStore';
 import { checkOptions } from '#lib/utils/checks';
 import { packageJson } from '#lib/utils/constants';
-import { setupLoggerAndLogOptions } from '#lib/utils/logger';
+import { setupLoggerAndLogOptions } from '#lib/utils/setup-logger';
+import { setupREST } from '#lib/utils/setup-rest';
 import { isOptionsObject } from '#lib/utils/type-guards';
 
 const token = envParseString('DISCORD_TOKEN', '');
@@ -56,6 +57,7 @@ for (const command of container.stores.get('commands').values()) {
 
 					setupLoggerAndLogOptions(runArgs);
 					checkOptions(runArgs.options);
+					setupREST(runArgs.options);
 					return command.run(runArgs);
 				} else if (isOptionsObject(arg2)) {
 					const arg1Name = (commandOrOptions as CommanderCommand).registeredArguments[0].name();
@@ -68,6 +70,7 @@ for (const command of container.stores.get('commands').values()) {
 
 					setupLoggerAndLogOptions(runArgs);
 					checkOptions(runArgs.options);
+					setupREST(runArgs.options);
 					return command.run(runArgs);
 				}
 
@@ -83,6 +86,7 @@ for (const command of container.stores.get('commands').values()) {
 
 				setupLoggerAndLogOptions(runArgs);
 				checkOptions(runArgs.options);
+				setupREST(runArgs.options);
 				return command.run(runArgs);
 			}
 		);
