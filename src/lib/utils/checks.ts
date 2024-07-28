@@ -31,3 +31,10 @@ export function checkPathIsInArgs(path?: string) {
 		exit(1);
 	}
 }
+
+export function checkNameIsInArgs(name?: string) {
+	if (!name) {
+		container.logger.fatal('A new name for the emoji is required.');
+		exit(1);
+	}
+}
