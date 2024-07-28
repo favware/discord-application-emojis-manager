@@ -25,11 +25,6 @@ export function handleError(error: Error) {
 				return;
 			}
 
-			case 429: {
-				rateLimited();
-				return;
-			}
-
 			case 500: {
 				serverError();
 				return;
@@ -57,11 +52,6 @@ function missingPermissions() {
 
 function invalidApplicationId() {
 	container.logger.fatal('The provided application ID is invalid. Please check the application ID and try again.');
-	exit(1);
-}
-
-function rateLimited() {
-	container.logger.fatal('The bot is being rate limited. Please try again later.');
 	exit(1);
 }
 
