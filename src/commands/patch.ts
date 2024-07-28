@@ -1,8 +1,12 @@
 import { container } from '@sapphire/pieces';
 import type { Snowflake } from 'discord-api-types/globals';
+import { Routes } from 'discord-api-types/v10';
 import { Command } from '#lib/structures/Command';
+import { checksNameOrIdIsInArgs } from '#lib/utils/checks';
+import { handleError } from '#lib/utils/error-handler';
+import { getIdForPossibleName } from '#lib/utils/get-current-emoji-names';
 
-type Args = [['id', Snowflake], ['name', string]];
+type Args = [['nameOrId', Snowflake], ['name', string]];
 
 export class PatchEmoji extends Command<Args> {
 	public constructor(context: Command.LoaderContext) {
@@ -10,8 +14,9 @@ export class PatchEmoji extends Command<Args> {
 			description: 'Patches an emoji on the server provided the emoji id and a new name for the emoji',
 			arguments: [
 				{
-					name: 'id',
-					description: 'The id of the emoji to patch'
+					name: 'nameOrId',
+					description:
+						'The name or snowflake of the emoji to update. If a name is provided a list of emojis will be fetched to find the id to update.'
 				},
 				{
 					name: 'name',
@@ -21,8 +26,23 @@ export class PatchEmoji extends Command<Args> {
 		});
 	}
 
-	public override run({ args }: Command.Run<Args>) {
-		throw new Error(`Method not implemented. id=${args.id}, name=${args.name}`);
+	public override async run({ args, options }: Command.Run<Args>) {
+		checksNameOrIdIsInArgs('get', args.nameOrId);
+
+		const emojiId = await getIdForPossibleName(args.nameOrId, options);
+
+		try {
+			const response = await this.container.rest.patch(Routes.applicationEmoji(options.applicationId, emojiId), {
+				body: {
+					name: args.name
+				}
+			});
+
+			this.container.logger.info(`Updated emoji:`);
+			console.log(JSON.stringify(response, null, 4));
+		} catch (error) {
+			handleError(error as Error);
+		}
 	}
 }
 
