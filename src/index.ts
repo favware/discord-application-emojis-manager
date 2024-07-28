@@ -5,8 +5,9 @@ import '#lib/root';
 import process from 'node:process';
 import { container } from '@sapphire/pieces';
 import { envParseString } from '@skyra/env-utilities';
-import { Command as CommanderCommand, type OptionValues } from 'commander';
+import { Command as CommanderCommand, type Options as CommanderOptions } from 'commander';
 import { CommandStore } from '#lib/structures/CommandStore';
+import { checkOptions } from '#lib/utils/check-options';
 import { packageJson } from '#lib/utils/constants';
 import { setupLoggerAndLogOptions } from '#lib/utils/logger';
 import { isOptionsObject } from '#lib/utils/type-guards';
@@ -30,7 +31,7 @@ for (const command of container.stores.get('commands').values()) {
 		.description(command.description)
 		.copyInheritedSettings(rootCommand)
 		.option(
-			'-t, --token <string>',
+			'--token <string>',
 			'The token of your Discord bot to authenticate with. You can also provide this with the DISCORD_TOKEN environment variable.',
 			token
 		)
@@ -42,9 +43,9 @@ for (const command of container.stores.get('commands').values()) {
 		.option('-v, --verbose', 'Whether to print verbose information', false)
 		.action(
 			async (
-				arg1: OptionValues | string,
-				arg2: CommanderCommand | OptionValues | string,
-				commandOrOptions?: CommanderCommand | OptionValues,
+				arg1: CommanderOptions | string,
+				arg2: CommanderCommand | CommanderOptions | string,
+				commandOrOptions?: CommanderCommand | CommanderOptions,
 				commanderCommand?: CommanderCommand
 			) => {
 				if (isOptionsObject(arg1)) {
@@ -54,6 +55,7 @@ for (const command of container.stores.get('commands').values()) {
 					};
 
 					setupLoggerAndLogOptions(runArgs);
+					checkOptions(runArgs.options);
 					return command.run(runArgs);
 				} else if (isOptionsObject(arg2)) {
 					const arg1Name = (commandOrOptions as CommanderCommand).registeredArguments[0].name();
@@ -65,6 +67,7 @@ for (const command of container.stores.get('commands').values()) {
 					};
 
 					setupLoggerAndLogOptions(runArgs);
+					checkOptions(runArgs.options);
 					return command.run(runArgs);
 				}
 
@@ -75,10 +78,11 @@ for (const command of container.stores.get('commands').values()) {
 						[arg1Name]: arg1,
 						[arg2Name]: arg2
 					},
-					options: commandOrOptions as OptionValues
+					options: commandOrOptions as CommanderOptions
 				};
 
 				setupLoggerAndLogOptions(runArgs);
+				checkOptions(runArgs.options);
 				return command.run(runArgs);
 			}
 		);
