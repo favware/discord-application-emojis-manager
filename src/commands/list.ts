@@ -16,7 +16,7 @@ export class ListEmojis extends Command<never> {
 		try {
 			const response = await this.container.rest.get(Routes.applicationEmojis(options.applicationId));
 
-			this.container.logger.info(`Commands registered for application ${options.applicationId}:`);
+			this.container.logger.info(`Emojis registered for application ${options.applicationId}:`);
 			console.log(stringify(response));
 		} catch (error) {
 			handleError(error as Error);
