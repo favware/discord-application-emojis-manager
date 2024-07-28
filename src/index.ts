@@ -7,7 +7,7 @@ import { container } from '@sapphire/pieces';
 import { envParseString } from '@skyra/env-utilities';
 import { Command as CommanderCommand, type Options as CommanderOptions } from 'commander';
 import { CommandStore } from '#lib/structures/CommandStore';
-import { checkOptions } from '#lib/utils/check-options';
+import { checkOptions } from '#lib/utils/checks';
 import { packageJson } from '#lib/utils/constants';
 import { setupLoggerAndLogOptions } from '#lib/utils/logger';
 import { isOptionsObject } from '#lib/utils/type-guards';
