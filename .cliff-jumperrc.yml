@@ -1,0 +1,10 @@
+name: discord-application-emoji-manager
+packagePath: .
+org: favware
+monoRepo: false
+tagTemplate: v{{new-version}}
+identifierBase: false
+pushTag: true
+githubRelease: true
+githubReleaseLatest: true
+githubRepo: auto

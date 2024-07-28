@@ -1,20 +1,27 @@
 import { Piece } from '@sapphire/pieces';
+import type { CommandOptions, CommandArgument, CommandRunParameters } from '#lib/structures/CommandTypes';
 
-export abstract class Command<Args, Options extends Command.Options = Command.Options> extends Piece<Options, 'commands'> {
+export abstract class Command<Args extends [string, unknown][], Options extends Command.Options<Args> = Command.Options<Args>> extends Piece<
+	Options,
+	'commands'
+> {
 	/**
 	 * A basic summary about the command
 	 */
 	public description: string;
 
+	public arguments: CommandArgument<Args[number][0]>[];
+
 	/**
 	 * @param context - context The context.
 	 * @param options - options Optional Command settings.
 	 */
-	public constructor(context: Piece.LoaderContext, options: CommandOptions = {} as CommandOptions) {
+	public constructor(context: Piece.LoaderContext, options: CommandOptions<Args> = {} as CommandOptions<Args>) {
 		const name = options.name ?? context.name;
 		super(context, { ...options, name: name.toLowerCase() });
 
 		this.description = options.description ?? '';
+		this.arguments = options.arguments ?? [];
 	}
 
 	/**
@@ -22,21 +29,12 @@ export abstract class Command<Args, Options extends Command.Options = Command.Op
 	 *
 	 * @param args - The arguments, if any.
 	 */
-	public abstract run(...args: Args[]): Promise<void> | void;
-}
-
-/**
- * The {@link Command} options.
- */
-export interface CommandOptions extends Piece.Options {
-	/**
-	 * The description for the command.
-	 */
-	description?: string;
+	public abstract run(parameters: CommandRunParameters<Args>): Promise<void> | void;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace Command {
-	export type Options = CommandOptions;
+	export type Options<Args extends [string, unknown][]> = CommandOptions<Args>;
 	export type LoaderContext = Piece.LoaderContext<'commands'>;
+	export type Run<Args extends [string, unknown][]> = CommandRunParameters<Args>;
 }

@@ -5,11 +5,8 @@ node_modules/
 .yarn/install-state.gz
 .yarn/build-state.yml
 
-# Local env files
-.env.local*
-.env.development.local*
-.env.test.local*
-.env.production.local*
+# Env files
+.env*
 
 # Output
 dist/

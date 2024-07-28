@@ -1,5 +1,6 @@
-import '#commands/delete-emoji';
-import '#commands/delete-emojis';
-import '#commands/get-emojis';
-import '#commands/patch-emoji';
-import '#commands/post-emojis';
+import '#commands/delete';
+import '#commands/delete-all';
+import '#commands/get';
+import '#commands/list';
+import '#commands/patch';
+import '#commands/post';
