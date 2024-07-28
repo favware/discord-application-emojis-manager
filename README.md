@@ -2,6 +2,8 @@
 
 # Discord Application Emoji Manager
 
+**A NodeJS CLI to manage emojis for Discord Applications**
+
 [![GitHub](https://img.shields.io/github/license/favware/discord-application-emoji-manager)](https://github.com/favware/discord-application-emoji-manager/blob/main/LICENSE)
 [![npm](https://img.shields.io/npm/v/@favware/discord-application-emoji-manager?color=crimson&logo=npm)](https://www.npmjs.com/package/@favware/discord-application-emoji-manager)
 
