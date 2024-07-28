@@ -376,6 +376,38 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@favware/discord-application-emojis-manager@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@favware/discord-application-emojis-manager@workspace:."
+  dependencies:
+    "@commitlint/cli": "npm:^19.3.0"
+    "@commitlint/config-conventional": "npm:^19.2.2"
+    "@discordjs/rest": "npm:^2.3.0"
+    "@favware/cliff-jumper": "npm:^4.0.3"
+    "@sapphire/discord-utilities": "npm:^3.3.0"
+    "@sapphire/node-utilities": "npm:^1.0.2"
+    "@sapphire/pieces": "npm:^4.3.1"
+    "@sapphire/prettier-config": "npm:^2.0.0"
+    "@sapphire/ts-config": "npm:^5.0.1"
+    "@sapphire/utilities": "npm:^3.17.0"
+    "@skyra/env-utilities": "npm:^1.3.0"
+    "@skyra/logger": "npm:^2.0.3"
+    "@types/node": "npm:^22.0.0"
+    commander: "npm:^12.1.0"
+    discord-api-types: "npm:0.37.93"
+    eslint: "npm:^8.57.0"
+    eslint-config-neon: "npm:^0.1.62"
+    eslint-formatter-pretty: "npm:5.0.0"
+    eslint-plugin-prettier: "npm:^5.2.1"
+    lint-staged: "npm:^15.2.7"
+    prettier: "npm:^3.3.3"
+    typescript: "npm:^5.5.4"
+  bin:
+    daem: ./dist/index.js
+    discord-application-emojis-manager: ./dist/index.js
+  languageName: unknown
+  linkType: soft
+
 "@humanwhocodes/config-array@npm:^0.11.14":
   version: 0.11.14
   resolution: "@humanwhocodes/config-array@npm:0.11.14"
@@ -1773,38 +1805,6 @@ __metadata:
   checksum: 10c0/5541c9830a0657cd03a7097bf24e8135db2bf117a399382e82d919bcd7af6fd8ff97f4cccf6f2de857dea1a650fe1fc774f3474a544d2221395eba5e44e89272
   languageName: node
   linkType: hard
-
-"discord-application-emojis-manager@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "discord-application-emojis-manager@workspace:."
-  dependencies:
-    "@commitlint/cli": "npm:^19.3.0"
-    "@commitlint/config-conventional": "npm:^19.2.2"
-    "@discordjs/rest": "npm:^2.3.0"
-    "@favware/cliff-jumper": "npm:^4.0.3"
-    "@sapphire/discord-utilities": "npm:^3.3.0"
-    "@sapphire/node-utilities": "npm:^1.0.2"
-    "@sapphire/pieces": "npm:^4.3.1"
-    "@sapphire/prettier-config": "npm:^2.0.0"
-    "@sapphire/ts-config": "npm:^5.0.1"
-    "@sapphire/utilities": "npm:^3.17.0"
-    "@skyra/env-utilities": "npm:^1.3.0"
-    "@skyra/logger": "npm:^2.0.3"
-    "@types/node": "npm:^22.0.0"
-    commander: "npm:^12.1.0"
-    discord-api-types: "npm:0.37.93"
-    eslint: "npm:^8.57.0"
-    eslint-config-neon: "npm:^0.1.62"
-    eslint-formatter-pretty: "npm:5.0.0"
-    eslint-plugin-prettier: "npm:^5.2.1"
-    lint-staged: "npm:^15.2.7"
-    prettier: "npm:^3.3.3"
-    typescript: "npm:^5.5.4"
-  bin:
-    daem: ./dist/index.js
-    discord-application-emojis-manager: ./dist/index.js
-  languageName: unknown
-  linkType: soft
 
 "doctrine@npm:^3.0.0":
   version: 3.0.0

@@ -1,5 +1,5 @@
 {
-	"name": "discord-application-emojis-manager",
+	"name": "@favware/discord-application-emojis-manager",
 	"description": "A NodeJS CLI to manage emojis for Discord Applications",
 	"license": "MIT",
 	"version": "1.0.0",
