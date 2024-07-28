@@ -39,13 +39,18 @@ export class PostEmojis extends Command<Args> {
 
 		const promises: Promise<APIEmoji>[] = [];
 		const currentEmojis = await getCurrentEmojis(options);
+		let skippedCount = 0;
+		let filesCount = 0;
 
 		for await (const file of findFilesRecursivelyRegex(imagesPath, IMAGE_EXTENSION)) {
+			filesCount++;
+
 			const extension = extname(file);
 			const name = basename(file, extension);
 
 			if (currentEmojis.some((emoji) => emoji.name === name)) {
 				this.container.logger.info(`Skipping emoji "${name}" because an emoji with that name already exists`);
+				skippedCount++;
 				continue;
 			}
 
@@ -67,7 +72,12 @@ export class PostEmojis extends Command<Args> {
 
 		try {
 			await Promise.all(promises);
-			this.container.logger.info('Uploaded all emoji successfully');
+
+			if (skippedCount === filesCount) {
+				this.container.logger.info('No new emojis were uploaded');
+			} else {
+				this.container.logger.info('Uploaded all emoji successfully');
+			}
 		} catch (error) {
 			handleError(error as Error);
 		}
