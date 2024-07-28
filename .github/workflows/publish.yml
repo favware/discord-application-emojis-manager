@@ -5,7 +5,7 @@ on:
 
 jobs:
   PublishPackage:
-    name: Publish @favware/discord-application-emoji-manager
+    name: Publish @favware/discord-application-emojis-manager
     runs-on: ubuntu-latest
     if: github.repository_owner == 'favware'
     steps:

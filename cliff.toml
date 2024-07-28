@@ -74,4 +74,4 @@ sort_commits = "newest"
 
 [remote.github]
 owner = "favware"
-repo = "discord-application-emoji-manager"
+repo = "discord-application-emojis-manager"
