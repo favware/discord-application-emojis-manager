@@ -5,6 +5,7 @@ import { Command } from '#lib/structures/Command';
 import { checkNameIsInArgs, checksNameOrIdIsInArgs } from '#lib/utils/checks';
 import { handleError } from '#lib/utils/error-handler';
 import { getIdForPossibleName } from '#lib/utils/get-current-emojis';
+import { stringify } from '#lib/utils/stringify';
 
 type Args = [['nameOrId', Snowflake], ['name', string]];
 
@@ -40,7 +41,7 @@ export class PatchEmoji extends Command<Args> {
 			});
 
 			this.container.logger.info(`Updated emoji:`);
-			console.log(JSON.stringify(response, null, 4));
+			console.log(stringify(response));
 		} catch (error) {
 			handleError(error as Error);
 		}

@@ -5,6 +5,7 @@ import { Command } from '#lib/structures/Command';
 import { checksNameOrIdIsInArgs } from '#lib/utils/checks';
 import { handleError } from '#lib/utils/error-handler';
 import { getIdForPossibleName } from '#lib/utils/get-current-emojis';
+import { stringify } from '#lib/utils/stringify';
 
 type Args = [['nameOrId', Snowflake]];
 
@@ -31,7 +32,7 @@ export class GetEmojis extends Command<Args> {
 			const response = await this.container.rest.get(Routes.applicationEmoji(options.applicationId, emojiId));
 
 			this.container.logger.info(`Requested emoji data:`);
-			console.log(JSON.stringify(response, null, 4));
+			console.log(stringify(response));
 		} catch (error) {
 			handleError(error as Error);
 		}
