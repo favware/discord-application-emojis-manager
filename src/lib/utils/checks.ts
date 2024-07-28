@@ -16,9 +16,9 @@ export function checkOptions(options: Options) {
 	}
 }
 
-export function checksIdIsInArgs(variant: 'delete' | 'get' | 'update', id?: string) {
-	if (!id) {
-		container.logger.fatal(`A Command ID to ${variant} is required.`);
+export function checksNameOrIdIsInArgs(variant: 'delete' | 'get' | 'update', nameOrId?: string) {
+	if (!nameOrId) {
+		container.logger.fatal(`An emoji name or id to ${variant} is required.`);
 		exit(1);
 	}
 }
