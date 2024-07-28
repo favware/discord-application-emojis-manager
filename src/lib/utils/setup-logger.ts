@@ -2,6 +2,7 @@ import { container } from '@sapphire/pieces';
 import { deepClone } from '@sapphire/utilities';
 import { Logger } from '@skyra/logger';
 import type { CommandRunParameters } from '#lib/structures/CommandTypes';
+import { stringify } from '#lib/utils/stringify';
 
 export function setupLoggerAndLogOptions<Args extends [string, unknown][]>(runArgs: CommandRunParameters<Args>) {
 	const logger = new Logger({ level: runArgs.options.verbose ? Logger.Level.Debug : Logger.Level.Info });
@@ -14,5 +15,5 @@ export function setupLoggerAndLogOptions<Args extends [string, unknown][]>(runAr
 		clonedRunArgs.options.token = 'REDACTED';
 	}
 
-	container.logger.debug('resolved options: ', JSON.stringify(clonedRunArgs, null, 2));
+	container.logger.debug('resolved options: ', stringify(clonedRunArgs));
 }
