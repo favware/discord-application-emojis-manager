@@ -58,6 +58,16 @@ listed below.
 > they can also be provided through the environment variables `DISCORD_TOKEN`
 > and `APPLICATION_ID` respectively.
 
+> [!NOTE]
+>
+> Emojis that are uploaded through the API are limited to a maximum of 256 KiB.
+> This differs from emojis uploaded through the Discord UI because Discord
+> automatically does some compression. To allow for a bit more leeway when using
+> [`post`](#post) and [`migrate`](#migrate) static emojis are efficiently
+> compressed using [`@napi-rs/image](https://github.com/Brooooooklyn/Image). If
+> after compression the emoji is still too large, the script will skip that
+> emoji and print a warning.
+
 ```sh
 Usage:  discord-application-emojis-manager [options] [command]
 
@@ -128,6 +138,23 @@ Options:
 Usage:  discord-application-emojis-manager list [options]
 
 Lists all emojis from the server in JSON format
+
+Options:
+  --token <string>           The token of your Discord bot to authenticate with. You can also provide this with the DISCORD_TOKEN environment variable. (default: "")
+  --application-id <string>  The ID of the Discord application for which to manage the emojis. You can also provide this with the APPLICATION_ID environment variable. (default: "")
+  -v, --verbose              Whether to print verbose information (default: false)
+  -h, --help                 display help for command
+```
+
+### `migrate`
+
+```sh
+Usage:  discord-application-emojis-manager migrate [options] <id>
+
+Migrates the emojis from a specified server to the application
+
+Arguments:
+  id                         The id of the server to migrate the emojis from. Unlike other commands names are not supported, because server names cannot be guaranteed to be unique.
 
 Options:
   --token <string>           The token of your Discord bot to authenticate with. You can also provide this with the DISCORD_TOKEN environment variable. (default: "")
