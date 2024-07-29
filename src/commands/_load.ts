@@ -4,3 +4,4 @@ import '#commands/get';
 import '#commands/list';
 import '#commands/patch';
 import '#commands/post';
+import '#commands/migrate';

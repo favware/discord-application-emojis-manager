@@ -16,6 +16,13 @@ export function checkOptions(options: Options) {
 	}
 }
 
+export function checkIdIsInArgs(id?: string) {
+	if (!id) {
+		container.logger.fatal(`A server id to migrate emojis from is required.`);
+		exit(1);
+	}
+}
+
 export function checksNameOrIdIsInArgs(variant: 'delete' | 'get' | 'update', nameOrId?: string) {
 	if (!nameOrId) {
 		container.logger.fatal(`An emoji name or id to ${variant} is required.`);
