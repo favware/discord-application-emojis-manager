@@ -53,7 +53,7 @@ export class MigrateEmojis extends Command<Args> {
 			const isCurrentEmoji = currentEmojiNames.includes(emoji.name ?? '');
 			if (isCurrentEmoji) {
 				this.#skippedCount++;
-				this.container.logger.info(`Skipping emoji "${emoji.name}" your application already has emojis with that name`);
+				this.container.logger.warn(`Skipping emoji "${emoji.name}" your application already has emojis with that name`);
 				return false;
 			}
 
@@ -89,7 +89,7 @@ export class MigrateEmojis extends Command<Args> {
 			await Promise.all(promises);
 
 			if (this.#skippedCount === guildEmojis.length) {
-				this.container.logger.info('No new emojis were uploaded');
+				this.container.logger.warn('No new emojis were uploaded');
 			} else {
 				this.container.logger.info('Uploaded all emoji successfully');
 			}
@@ -157,12 +157,12 @@ export class MigrateEmojis extends Command<Args> {
 	}
 
 	private handleNoFilteredEmojis() {
-		this.container.logger.info('Your application already has all the emojis from the server, or there are no emojis with unique names.');
+		this.container.logger.warn('Your application already has all the emojis from the server, or there are no emojis with unique names.');
 		return exit(1);
 	}
 
 	private skipEmojiForSize(emojiName: string) {
-		this.container.logger.info(`Skipping emoji "${emojiName}" because it is larger than 256 KiB`);
+		this.container.logger.warn(`Skipping emoji "${emojiName}" because it is larger than 256 KiB`);
 	}
 
 	private static readonly MaximumUploadSize = 256 * 1_024;
