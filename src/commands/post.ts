@@ -1,7 +1,9 @@
+import { Buffer } from 'node:buffer';
 import { existsSync } from 'node:fs';
-import { readFile, stat } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 import { basename, extname, isAbsolute, join } from 'node:path';
 import { cwd, exit } from 'node:process';
+import { Transformer } from '@napi-rs/image';
 import { findFilesRecursivelyRegex } from '@sapphire/node-utilities';
 import { container } from '@sapphire/pieces';
 import { type APIEmoji, Routes } from 'discord-api-types/v10';
@@ -14,6 +16,8 @@ import { getCurrentEmojis } from '#lib/utils/get-current-emojis';
 type Args = [['path', string]];
 
 export class PostEmojis extends Command<Args> {
+	#skippedCount = 0;
+
 	public constructor(context: Command.LoaderContext) {
 		super(context, {
 			description: 'Posts all emoji in the input directory to the server',
@@ -39,7 +43,6 @@ export class PostEmojis extends Command<Args> {
 
 		const promises: Promise<APIEmoji>[] = [];
 		const currentEmojis = await getCurrentEmojis(options);
-		let skippedCount = 0;
 		let filesCount = 0;
 
 		for await (const file of findFilesRecursivelyRegex(imagesPath, validImageExtensions)) {
@@ -49,38 +52,33 @@ export class PostEmojis extends Command<Args> {
 			const name = basename(file);
 			const nameWithoutExtension = basename(file, extension);
 
-			if (await this.fileIsLargerThanThreshold(file)) {
-				this.container.logger.info(`Skipping emoji "${name}" because it is larger than 256 KiB`);
-				skippedCount++;
-				continue;
-			}
-
 			if (currentEmojis.some((emoji) => emoji.name === nameWithoutExtension)) {
 				this.container.logger.info(`Skipping emoji "${name}" because an emoji with that name already exists`);
-				skippedCount++;
+				this.#skippedCount++;
 				continue;
 			}
 
-			this.container.logger.info(`Queueing emoji "${nameWithoutExtension}" for uploading`);
-
 			const mimeType = this.extensionToMimeType(extension);
-			const imageBase64 = await this.readImageFile(file);
-			const image = `data:${mimeType};base64,${imageBase64}`;
+			const image = await this.getFile(file, name, mimeType);
 
-			promises.push(
-				this.container.rest.post(Routes.applicationEmojis(options.applicationId), {
-					body: {
-						name: nameWithoutExtension,
-						image
-					}
-				}) as Promise<APIEmoji>
-			);
+			if (image) {
+				this.container.logger.info(`Queueing emoji "${nameWithoutExtension}" for uploading`);
+
+				promises.push(
+					this.container.rest.post(Routes.applicationEmojis(options.applicationId), {
+						body: {
+							name: nameWithoutExtension,
+							image
+						}
+					}) as Promise<APIEmoji>
+				);
+			}
 		}
 
 		try {
 			await Promise.all(promises);
 
-			if (skippedCount === filesCount) {
+			if (this.#skippedCount === filesCount) {
 				this.container.logger.info('No new emojis were uploaded');
 			} else {
 				this.container.logger.info('Uploaded all emoji successfully');
@@ -90,15 +88,33 @@ export class PostEmojis extends Command<Args> {
 		}
 	}
 
-	private async fileIsLargerThanThreshold(file: string): Promise<boolean> {
-		const statData = await stat(file);
-		const fileSizeInKiB = statData.size / 1_024;
-		return fileSizeInKiB > 256;
+	private async getFile(file: string, name: string, mimeType: 'image/gif' | 'image/jpeg' | 'image/png'): Promise<string | undefined> {
+		const buffer = await this.readImageFile(file);
+
+		if (buffer.byteLength <= PostEmojis.MaximumUploadSize) {
+			const imageBase64 = Buffer.from(buffer).toString('base64');
+			return `data:${mimeType};base64,${imageBase64}`;
+		} else if (mimeType === 'image/gif') {
+			this.#skippedCount++;
+			this.skipEmojiForSize(name);
+			return undefined;
+		} else {
+			const image = await new Transformer(buffer).fastResize({ width: 128, height: 128, fit: 2 }).png();
+
+			if (image.byteLength > PostEmojis.MaximumUploadSize) {
+				this.#skippedCount++;
+				this.skipEmojiForSize(name);
+				return undefined;
+			}
+
+			const imageBase64 = Buffer.from(buffer).toString('base64');
+			return `data:${mimeType};base64,${imageBase64}`;
+		}
 	}
 
-	private async readImageFile(file: string): Promise<string> {
+	private async readImageFile(file: string): Promise<Buffer> {
 		try {
-			return await readFile(file, 'base64');
+			return await readFile(file);
 		} catch {
 			this.container.logger.fatal(`Failed to read image file ${file}`);
 			exit(1);
@@ -119,6 +135,12 @@ export class PostEmojis extends Command<Args> {
 				exit(1);
 		}
 	}
+
+	private skipEmojiForSize(emojiName: string) {
+		this.container.logger.info(`Skipping emoji "${emojiName}" because it is larger than 256 KiB`);
+	}
+
+	private static readonly MaximumUploadSize = 256 * 1_024;
 }
 
 void container.stores.loadPiece({
