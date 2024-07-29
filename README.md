@@ -28,10 +28,13 @@ You can use the following command to install this package, or replace
 npm install -D @favware/discord-application-emojis-manager
 ```
 
-Or install it globally:
+Although you probably want to install this globally to use it as a CLI tool,
+here are some examples:
 
 ```sh
 npm install -g @favware/discord-application-emojis-manager
+pnpm add -g @favware/discord-application-emojis-manager
+volta install @favware/discord-application-emojis-manager
 ```
 
 Then call the script with `discord-application-emojis-manager` or `daem`:
@@ -41,10 +44,13 @@ discord-application-emojis-manager <command> <args...> --token "your-discord-tok
 daem <command> <args...> --token "your-discord-token" --application-id "your application id"
 ```
 
-Alternatively you can call the CLI directly with `npx`:
+Alternatively you can call the CLI directly with `npx`, `pnpm dlx`, or
+`yarn dlx`:
 
 ```sh
 npx @favware/discord-application-emojis-manager <command> <args...> --token "your-discord-token" --application-id "your application id"
+pnpm dlx @favware/discord-application-emojis-manager <command> <args...> --token "your-discord-token" --application-id "your application id"
+yarn dlx @favware/discord-application-emojis-manager <command> <args...> --token "your-discord-token" --application-id "your application id"
 ```
 
 ## Usage
