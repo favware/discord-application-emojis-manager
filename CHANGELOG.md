@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.1.0](https://github.com/favware/discord-application-emojis-manager/compare/v1.0.1...v1.1.0) - (2024-07-29)
+
+## 🏠 Refactor
+
+- Change log level for warnings to warn ([8d9c8cb](https://github.com/favware/discord-application-emojis-manager/commit/8d9c8cb2314a6feb9f30422b599d0307f400119c)) ([#5](https://github.com/favware/discord-application-emojis-manager/pull/5) by @favna)
+
+## 📝 Documentation
+
+- Update installation in readme ([07e3e72](https://github.com/favware/discord-application-emojis-manager/commit/07e3e7247d71a7df6938babae36c054eb9f4f77d))
+- **readme:** Add migrate and compression ([b9c9fe9](https://github.com/favware/discord-application-emojis-manager/commit/b9c9fe919f0e90189aa51caae6d6b8c680a951ea))
+
+## 🚀 Features
+
+- Implement @napi-rs/image compression for static emojis ([032c8b0](https://github.com/favware/discord-application-emojis-manager/commit/032c8b0d4699d9108dc5d919c59970f064aeb713))
+- Migrate command ([11d26f3](https://github.com/favware/discord-application-emojis-manager/commit/11d26f34186f31bd1549381ded042ff654ca9582))
+
 # [1.0.1](https://github.com/favware/discord-application-emojis-manager/compare/v1.0.0...v1.0.1) - (2024-07-28)
 
 ## 🐛 Bug Fixes

@@ -2,7 +2,7 @@
 	"name": "@favware/discord-application-emojis-manager",
 	"description": "A NodeJS CLI to manage emojis for Discord Applications",
 	"license": "MIT",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"type": "module",
 	"main": "dist/index.js",
 	"bin": {
