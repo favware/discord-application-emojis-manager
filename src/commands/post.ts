@@ -53,7 +53,7 @@ export class PostEmojis extends Command<Args> {
 			const nameWithoutExtension = basename(file, extension);
 
 			if (currentEmojis.some((emoji) => emoji.name === nameWithoutExtension)) {
-				this.container.logger.info(`Skipping emoji "${name}" because an emoji with that name already exists`);
+				this.container.logger.warn(`Skipping emoji "${name}" because an emoji with that name already exists`);
 				this.#skippedCount++;
 				continue;
 			}
@@ -79,7 +79,7 @@ export class PostEmojis extends Command<Args> {
 			await Promise.all(promises);
 
 			if (this.#skippedCount === filesCount) {
-				this.container.logger.info('No new emojis were uploaded');
+				this.container.logger.warn('No new emojis were uploaded');
 			} else {
 				this.container.logger.info('Uploaded all emoji successfully');
 			}
@@ -137,7 +137,7 @@ export class PostEmojis extends Command<Args> {
 	}
 
 	private skipEmojiForSize(emojiName: string) {
-		this.container.logger.info(`Skipping emoji "${emojiName}" because it is larger than 256 KiB`);
+		this.container.logger.warn(`Skipping emoji "${emojiName}" because it is larger than 256 KiB`);
 	}
 
 	private static readonly MaximumUploadSize = 256 * 1_024;
