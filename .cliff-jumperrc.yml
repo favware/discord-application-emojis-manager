@@ -8,3 +8,4 @@ pushTag: true
 githubRelease: true
 githubReleaseLatest: true
 githubRepo: auto
+githubReleaseNameTemplate: 'v{{new-version}}'
