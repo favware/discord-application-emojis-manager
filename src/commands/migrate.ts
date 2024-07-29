@@ -1,5 +1,6 @@
 import { Buffer } from 'node:buffer';
 import { exit } from 'node:process';
+import { Transformer } from '@napi-rs/image';
 import { container } from '@sapphire/pieces';
 import type { Snowflake } from 'discord-api-types/globals';
 import { CDNRoutes, ImageFormat, RouteBases, Routes, type APIEmoji } from 'discord-api-types/v10';
@@ -24,6 +25,8 @@ interface EmojiWithBase64 extends Emoji {
 }
 
 export class MigrateEmojis extends Command<Args> {
+	#skippedCount = 0;
+
 	public constructor(context: Command.LoaderContext) {
 		super(context, {
 			description: 'Migrates the emojis from a specified server to the application',
@@ -49,6 +52,7 @@ export class MigrateEmojis extends Command<Args> {
 		const filteredEmojis = guildEmojis.filter((emoji) => {
 			const isCurrentEmoji = currentEmojiNames.includes(emoji.name ?? '');
 			if (isCurrentEmoji) {
+				this.#skippedCount++;
 				this.container.logger.info(`Skipping emoji "${emoji.name}" your application already has emojis with that name`);
 				return false;
 			}
@@ -65,11 +69,10 @@ export class MigrateEmojis extends Command<Args> {
 		}));
 
 		const emojisToUpload = await this.getEmojiBase64s(emojiNamesAndUrls);
-		if (!emojisToUpload?.length) return this.handleNoEmojiBase64s();
 
 		const promises: Promise<APIEmoji>[] = [];
 
-		for (const emojiToUpload of emojisToUpload) {
+		for (const emojiToUpload of emojisToUpload ?? []) {
 			this.container.logger.info(`Queueing emoji "${emojiToUpload.name}" for uploading`);
 
 			promises.push(
@@ -85,7 +88,11 @@ export class MigrateEmojis extends Command<Args> {
 		try {
 			await Promise.all(promises);
 
-			this.container.logger.info('Uploaded emoji successfully');
+			if (this.#skippedCount === guildEmojis.length) {
+				this.container.logger.info('No new emojis were uploaded');
+			} else {
+				this.container.logger.info('Uploaded all emoji successfully');
+			}
 		} catch (error) {
 			handleError(error as Error);
 		}
@@ -106,18 +113,35 @@ export class MigrateEmojis extends Command<Args> {
 
 		try {
 			for (const emoji of emojis) {
-				const response = await fetch(emoji.url);
-				const buffer = await response.arrayBuffer();
-				const maxBufferSize = 256 * 1_024; // 256 KiB
-				if (buffer.byteLength > maxBufferSize) {
-					this.container.logger.info(`Skipping emoji "${emoji.name}" because it is larger than 256 KiB`);
-					continue;
-				}
-
 				const mimeType = emoji.animated ? 'image/gif' : 'image/png';
-				const imageBase64 = Buffer.from(buffer).toString('base64');
 
-				emojisWithBase64.push({ name: emoji.name, base64: `data:${mimeType};base64,${imageBase64}` });
+				const buffer = await fetch(emoji.url)
+					.then(async (response) => response.blob())
+					.then(async (blob) => blob.arrayBuffer())
+					.then((blob) => Buffer.from(blob));
+
+				if (buffer.byteLength <= MigrateEmojis.MaximumUploadSize) {
+					const imageBase64 = Buffer.from(buffer).toString('base64');
+
+					emojisWithBase64.push({ name: emoji.name, base64: `data:${mimeType};base64,${imageBase64}` });
+				} else {
+					if (emoji.animated) {
+						this.#skippedCount++;
+						this.skipEmojiForSize(emoji.name);
+						continue;
+					}
+
+					const image = await new Transformer(buffer).fastResize({ width: 128, height: 128, fit: 2 }).png();
+
+					if (image.byteLength > MigrateEmojis.MaximumUploadSize) {
+						this.#skippedCount++;
+						this.skipEmojiForSize(emoji.name);
+						continue;
+					}
+
+					const imageBase64 = Buffer.from(image).toString('base64');
+					emojisWithBase64.push({ name: emoji.name, base64: `data:${mimeType};base64,${imageBase64}` });
+				}
 			}
 
 			return emojisWithBase64;
@@ -137,12 +161,11 @@ export class MigrateEmojis extends Command<Args> {
 		return exit(1);
 	}
 
-	private handleNoEmojiBase64s() {
-		this.container.logger.fatal(
-			"There are no emojis left to upload. Either they were all skipped or there was an error downloading them. You can check if the Discord CDN works, if it does then it's the first reason."
-		);
-		return exit(1);
+	private skipEmojiForSize(emojiName: string) {
+		this.container.logger.info(`Skipping emoji "${emojiName}" because it is larger than 256 KiB`);
 	}
+
+	private static readonly MaximumUploadSize = 256 * 1_024;
 }
 
 void container.stores.loadPiece({
