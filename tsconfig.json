@@ -4,12 +4,12 @@
 		"rootDir": "src",
 		"outDir": "dist",
 		"tsBuildInfoFile": "dist/.tsbuildinfo",
-		"baseUrl": "src"
-	},
-	"paths": {
-		"#commands/*": ["commands/*"],
-		"#lib/*": ["lib/*"],
-		"#root/*": ["*"]
+		"baseUrl": "src",
+		"paths": {
+			"#commands/*": ["commands/*"],
+			"#lib/*": ["lib/*"],
+			"#root/*": ["*"]
+		}
 	},
 	"include": ["src"]
 }
