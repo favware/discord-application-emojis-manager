@@ -41,12 +41,12 @@
 		"discord-api-types": "0.37.93"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^19.3.0",
+		"@commitlint/cli": "^19.4.0",
 		"@commitlint/config-conventional": "^19.2.2",
 		"@favware/cliff-jumper": "^4.0.3",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
-		"@types/node": "^22.1.0",
+		"@types/node": "^22.2.0",
 		"eslint": "^8.57.0",
 		"eslint-config-neon": "^0.1.62",
 		"eslint-formatter-pretty": "5.0.0",
