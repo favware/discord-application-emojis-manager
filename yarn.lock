@@ -421,14 +421,14 @@ __metadata:
     "@sapphire/utilities": "npm:^3.17.0"
     "@skyra/env-utilities": "npm:^1.3.0"
     "@skyra/logger": "npm:^2.0.3"
-    "@types/node": "npm:^22.2.0"
+    "@types/node": "npm:^22.4.0"
     commander: "npm:^12.1.0"
-    discord-api-types: "npm:0.37.93"
+    discord-api-types: "npm:0.37.94"
     eslint: "npm:^8.57.0"
     eslint-config-neon: "npm:^0.1.62"
     eslint-formatter-pretty: "npm:5.0.0"
     eslint-plugin-prettier: "npm:^5.2.1"
-    lint-staged: "npm:^15.2.8"
+    lint-staged: "npm:^15.2.9"
     prettier: "npm:^3.3.3"
     typescript: "npm:^5.5.4"
   bin:
@@ -1078,12 +1078,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^22.2.0":
-  version: 22.2.0
-  resolution: "@types/node@npm:22.2.0"
+"@types/node@npm:*, @types/node@npm:^22.4.0":
+  version: 22.4.0
+  resolution: "@types/node@npm:22.4.0"
   dependencies:
-    undici-types: "npm:~6.13.0"
-  checksum: 10c0/c17900b34faecfec204f72970bd658d0c217aaf739c1bf7690c969465b6b26b77a8be1cd9ba735aadbd1dd20b5c3e4f406ec33528bf7c6eec90744886c5d5608
+    undici-types: "npm:~6.19.2"
+  checksum: 10c0/84cd094b19a27e0db425f1d02614e4f7ac59b5eb3b21e288c8f8d4d0a4c9ad370107bc1a649d4c2b4e810cd133feea26e0bbf7e7c617f93e9e139d6d2568cf50
   languageName: node
   linkType: hard
 
@@ -1979,10 +1979,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:0.37.93":
-  version: 0.37.93
-  resolution: "discord-api-types@npm:0.37.93"
-  checksum: 10c0/5541c9830a0657cd03a7097bf24e8135db2bf117a399382e82d919bcd7af6fd8ff97f4cccf6f2de857dea1a650fe1fc774f3474a544d2221395eba5e44e89272
+"discord-api-types@npm:0.37.94":
+  version: 0.37.94
+  resolution: "discord-api-types@npm:0.37.94"
+  checksum: 10c0/8931ca174fd0887eac90232c4f8480581034dd9d85b38d27f5f9a87e21e665dacf350f532423cf832a7caf7054b52f09194872ff4c44f558ef7baae99da43fa7
   languageName: node
   linkType: hard
 
@@ -3493,9 +3493,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^15.2.8":
-  version: 15.2.8
-  resolution: "lint-staged@npm:15.2.8"
+"lint-staged@npm:^15.2.9":
+  version: 15.2.9
+  resolution: "lint-staged@npm:15.2.9"
   dependencies:
     chalk: "npm:~5.3.0"
     commander: "npm:~12.1.0"
@@ -3509,7 +3509,7 @@ __metadata:
     yaml: "npm:~2.5.0"
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 10c0/7d43f11f493d27951c746b4c077fed16ba954c0517cf2fd999034e9e7bf86fde506a797b23531a56a1fde4c24846e0f6583ce6db3bdfd42e92335b1aab367737
+  checksum: 10c0/820c622378b62b826974af17f1747e2a4b0556e4fb99d101af89ad298d392ff079f580fdc576f16a27e975d726b95d73495fd524139402ff654c4649ef2f1a6a
   languageName: node
   linkType: hard
 
@@ -5414,10 +5414,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~6.13.0":
-  version: 6.13.0
-  resolution: "undici-types@npm:6.13.0"
-  checksum: 10c0/2de55181f569c77a4f08063f8bf2722fcbb6ea312a26a9e927bd1f5ea5cf3a281c5ddf23155061db083e0a25838f54813543ff13b0ac34d230d5c1205ead66c1
+"undici-types@npm:~6.19.2":
+  version: 6.19.6
+  resolution: "undici-types@npm:6.19.6"
+  checksum: 10c0/9b2264c5700e7169c6c62c643aac56cd8984c5fd7e18ed31ff11780260e137f6340dee8317a2e6e0ae3c49f5e5ef6fa577ea07193cbaa535265cba76a267cae9
   languageName: node
   linkType: hard
 
