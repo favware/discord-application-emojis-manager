@@ -22,7 +22,7 @@
 		"build": "tsc",
 		"watch": "tsc -w",
 		"start": "node dist/index.js",
-		"lint": "eslint --format=pretty --ext ts --fix src",
+		"lint": "eslint --format=pretty --fix",
 		"format": "prettier --write .",
 		"prepack": "yarn build",
 		"bump": "cliff-jumper",
@@ -47,9 +47,9 @@
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
 		"@types/node": "^22.5.0",
-		"eslint": "^8.57.0",
+		"eslint": "^9.9.1",
 		"eslint-config-neon": "^0.2.0",
-		"eslint-formatter-pretty": "5.0.0",
+		"eslint-formatter-pretty": "6.0.1",
 		"eslint-plugin-prettier": "^5.2.1",
 		"lint-staged": "^15.2.9",
 		"prettier": "^3.3.3",
@@ -81,7 +81,7 @@
 	},
 	"lint-staged": {
 		"*": "prettier --ignore-unknown --write",
-		"*.{mjs,js,ts,tsx}": "eslint --fix --ext mjs,js,ts,tsx"
+		"*.{mjs,js,ts,tsx}": "eslint --fix"
 	},
 	"publishConfig": {
 		"access": "public"
