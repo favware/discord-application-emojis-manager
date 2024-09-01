@@ -31,22 +31,22 @@
 	"dependencies": {
 		"@discordjs/rest": "^2.3.0",
 		"@napi-rs/image": "^1.9.2",
-		"@sapphire/discord-utilities": "^3.3.0",
+		"@sapphire/discord-utilities": "^3.4.0",
 		"@sapphire/node-utilities": "^1.0.2",
 		"@sapphire/pieces": "^4.3.1",
 		"@sapphire/utilities": "^3.17.0",
 		"@skyra/env-utilities": "^1.3.0",
 		"@skyra/logger": "^2.0.3",
 		"commander": "^12.1.0",
-		"discord-api-types": "0.37.97"
+		"discord-api-types": "0.37.98"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^19.4.0",
-		"@commitlint/config-conventional": "^19.2.2",
+		"@commitlint/cli": "^19.4.1",
+		"@commitlint/config-conventional": "^19.4.1",
 		"@favware/cliff-jumper": "^4.1.0",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
-		"@types/node": "^22.5.0",
+		"@types/node": "^22.5.1",
 		"eslint": "^9.9.1",
 		"eslint-config-neon": "^0.2.0",
 		"eslint-formatter-pretty": "6.0.1",
@@ -56,7 +56,7 @@
 		"typescript": "^5.5.4"
 	},
 	"resolutions": {
-		"discord-api-types": "0.37.97",
+		"discord-api-types": "0.37.98",
 		"@angular-eslint/eslint-plugin-template": "npm:@favware/skip-dependency@latest",
 		"@angular-eslint/eslint-plugin": "npm:@favware/skip-dependency@latest",
 		"@angular-eslint/template-parser": "npm:@favware/skip-dependency@latest",
