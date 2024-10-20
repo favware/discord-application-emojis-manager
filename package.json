@@ -43,7 +43,7 @@
 	"devDependencies": {
 		"@commitlint/cli": "^19.5.0",
 		"@commitlint/config-conventional": "^19.5.0",
-		"@favware/cliff-jumper": "^4.1.0",
+		"@favware/cliff-jumper": "^5.0.0",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
 		"@types/node": "^22.7.5",
