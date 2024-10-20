@@ -46,8 +46,8 @@
 		"@favware/cliff-jumper": "^4.1.0",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
-		"@types/node": "^22.7.5",
-		"eslint": "^9.12.0",
+		"@types/node": "^22.7.7",
+		"eslint": "^9.13.0",
 		"eslint-config-neon": "^0.2.0",
 		"eslint-formatter-pretty": "6.0.1",
 		"eslint-plugin-prettier": "^5.2.1",
@@ -86,5 +86,5 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"packageManager": "yarn@4.5.0"
+	"packageManager": "yarn@4.5.1"
 }
