@@ -85,9 +85,9 @@ Commands:
   delete-all [options]               Deletes all emoji from the bot application
   get [options] <nameOrId>           Gets a single emojis from the bot application in JSON format
   list [options]                     Lists all emojis from the bot application in JSON format
-  patch [options] <nameOrId> <name>  Patches an emoji on the server provided the emoji id and a new name for the emoji
-  migrate [options] <id>             Migrates the emojis from a specified server to the application
-  post [options] <path>              Posts all emoji in the input directory to the server
+  patch [options] <nameOrId> <name>  Patches an emoji on registered to the bot application provided the emoji id and a new name for the emoji
+  migrate [options] <id>             Migrates the emojis from a specified discord server to the application
+  post [options] <path>              Posts all emoji in the input directory to the bot application
   help [command]                     display help for command
 ```
 
