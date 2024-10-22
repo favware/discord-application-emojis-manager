@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.1.1](https://github.com/favware/discord-application-emojis-manager/compare/v1.1.0...v1.1.1) - (2024-10-22)
+
+## 🏠 Refactor
+
+- Improve terminology in regards to the use of the word "server" ([c389850](https://github.com/favware/discord-application-emojis-manager/commit/c389850da0393d10859bdf96b3f4e5398e0d3221))
+
+## 🐛 Bug Fixes
+
+- **deps:** Update all non-major dependencies ([073dc48](https://github.com/favware/discord-application-emojis-manager/commit/073dc48ce42d51e951fe68de128126128fe99b0d)) ([#12](https://github.com/favware/discord-application-emojis-manager/pull/12) by @renovate[bot])
+
 # [1.1.0](https://github.com/favware/discord-application-emojis-manager/compare/v1.0.1...v1.1.0) - (2024-07-29)
 
 ## 🏠 Refactor
