@@ -11,7 +11,7 @@ type Args = [['nameOrId', Snowflake]];
 export class DeleteEmoji extends Command<Args> {
 	public constructor(context: Command.LoaderContext) {
 		super(context, {
-			description: 'Deletes an emoji from the server',
+			description: 'Deletes an emoji from the bot application',
 			arguments: [
 				{
 					name: 'nameOrId',

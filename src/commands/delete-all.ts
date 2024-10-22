@@ -7,7 +7,7 @@ import { getCurrentEmojis } from '#lib/utils/get-current-emojis';
 export class DeleteEmojis extends Command<never> {
 	public constructor(context: Command.LoaderContext) {
 		super(context, {
-			description: 'Deletes all emoji from the server'
+			description: 'Deletes all emoji from the bot application'
 		});
 	}
 

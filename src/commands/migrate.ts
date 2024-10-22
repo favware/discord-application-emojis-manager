@@ -29,12 +29,12 @@ export class MigrateEmojis extends Command<Args> {
 
 	public constructor(context: Command.LoaderContext) {
 		super(context, {
-			description: 'Migrates the emojis from a specified server to the application',
+			description: 'Migrates the emojis from a specified discord server to the application',
 			arguments: [
 				{
 					name: 'id',
 					description:
-						'The id of the server to migrate the emojis from. Unlike other commands names are not supported, because server names cannot be guaranteed to be unique.'
+						'The id of the discord server to migrate the emojis from. Unlike other commands names are not supported, because discord server names cannot be guaranteed to be unique.'
 				}
 			]
 		});
@@ -146,18 +146,18 @@ export class MigrateEmojis extends Command<Args> {
 
 			return emojisWithBase64;
 		} catch {
-			this.container.logger.fatal(`Failed to retrieve the emojis from the server from the Discord CDN`);
+			this.container.logger.fatal(`Failed to retrieve the emojis registered to the bot application from the Discord CDN`);
 			return exit(1);
 		}
 	}
 
 	private handleNoGuildEmojis(id: string) {
-		this.container.logger.fatal(`The server with id ${id} has no emojis.`);
+		this.container.logger.fatal(`The discord server with id ${id} has no emojis.`);
 		return exit(1);
 	}
 
 	private handleNoFilteredEmojis() {
-		this.container.logger.warn('Your application already has all the emojis from the server, or there are no emojis with unique names.');
+		this.container.logger.warn('Your application already has all the emojis from the discord server, or there are no emojis with unique names.');
 		return exit(1);
 	}
 

@@ -12,7 +12,7 @@ type Args = [['nameOrId', Snowflake], ['name', string]];
 export class PatchEmoji extends Command<Args> {
 	public constructor(context: Command.LoaderContext) {
 		super(context, {
-			description: 'Patches an emoji on the server provided the emoji id and a new name for the emoji',
+			description: 'Patches an emoji on registered to the bot application provided the emoji id and a new name for the emoji',
 			arguments: [
 				{
 					name: 'nameOrId',

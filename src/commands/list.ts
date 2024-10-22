@@ -8,7 +8,7 @@ import { stringify } from '#lib/utils/stringify';
 export class ListEmojis extends Command<never> {
 	public constructor(context: Command.LoaderContext) {
 		super(context, {
-			description: 'Lists all emojis from the server in JSON format'
+			description: 'Lists all emojis from the bot application in JSON format'
 		});
 	}
 

@@ -20,7 +20,7 @@ export class PostEmojis extends Command<Args> {
 
 	public constructor(context: Command.LoaderContext) {
 		super(context, {
-			description: 'Posts all emoji in the input directory to the server',
+			description: 'Posts all emoji in the input directory to the bot application',
 			arguments: [
 				{
 					name: 'path',

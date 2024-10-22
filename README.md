@@ -81,11 +81,12 @@ Options:
   -h, --help                         display help for command
 
 Commands:
-  delete [options] <nameOrId>        Deletes an emoji from the server
-  delete-all [options]               Deletes all emoji from the server
-  get [options] <nameOrId>           Gets a single emojis from the server in JSON format
-  list [options]                     Lists all emojis from the server in JSON format
+  delete [options] <nameOrId>        Deletes an emoji from the bot application
+  delete-all [options]               Deletes all emoji from the bot application
+  get [options] <nameOrId>           Gets a single emojis from the bot application in JSON format
+  list [options]                     Lists all emojis from the bot application in JSON format
   patch [options] <nameOrId> <name>  Patches an emoji on the server provided the emoji id and a new name for the emoji
+  migrate [options] <id>             Migrates the emojis from a specified server to the application
   post [options] <path>              Posts all emoji in the input directory to the server
   help [command]                     display help for command
 ```
@@ -95,7 +96,7 @@ Commands:
 ```sh
 Usage:  discord-application-emojis-manager delete [options] <nameOrId>
 
-Deletes an emoji from the server
+Deletes an emoji from the bot application
 
 Arguments:
   nameOrId                   The name or snowflake of the emoji to delete. If a name is provided a list of emojis will be fetched to find the id to delete.
@@ -112,7 +113,7 @@ Options:
 ```sh
 Usage:  discord-application-emojis-manager delete-all [options]
 
-Deletes all emoji from the server
+Deletes all emoji from the bot application
 
 Options:
   --token <string>           The token of your Discord bot to authenticate with. You can also provide this with the DISCORD_TOKEN environment variable. (default: "")
@@ -126,7 +127,7 @@ Options:
 ```sh
 Usage:  discord-application-emojis-manager get [options] <nameOrId>
 
-Gets a single emojis from the server in JSON format
+Gets a single emojis from the bot application in JSON format
 
 Arguments:
   nameOrId                   The name or snowflake of the emoji to get. If a name is provided a list of emojis will be fetched to find the id to get.
@@ -143,7 +144,7 @@ Options:
 ```sh
 Usage:  discord-application-emojis-manager list [options]
 
-Lists all emojis from the server in JSON format
+Lists all emojis from the bot application in JSON format
 
 Options:
   --token <string>           The token of your Discord bot to authenticate with. You can also provide this with the DISCORD_TOKEN environment variable. (default: "")
@@ -157,10 +158,10 @@ Options:
 ```sh
 Usage:  discord-application-emojis-manager migrate [options] <id>
 
-Migrates the emojis from a specified server to the application
+Migrates the emojis from a specified discord server to the application
 
 Arguments:
-  id                         The id of the server to migrate the emojis from. Unlike other commands names are not supported, because server names cannot be guaranteed to be unique.
+  id                         The id of the discord server to migrate the emojis from. Unlike other commands names are not supported, because discord server names cannot be guaranteed to be unique.
 
 Options:
   --token <string>           The token of your Discord bot to authenticate with. You can also provide this with the DISCORD_TOKEN environment variable. (default: "")
@@ -174,7 +175,7 @@ Options:
 ```sh
 Usage:  discord-application-emojis-manager patch [options] <nameOrId> <name>
 
-Patches an emoji on the server provided the emoji id and a new name for the emoji
+Patches an emoji on registered to the bot application provided the emoji id and a new name for the emoji
 
 Arguments:
   nameOrId                   The name or snowflake of the emoji to update. If a name is provided a list of emojis will be fetched to find the id to update.
@@ -192,7 +193,7 @@ Options:
 ```sh
 Usage:  discord-application-emojis-manager post [options] <path>
 
-Posts all emoji in the input directory to the server
+Posts all emoji in the input directory to the bot application
 
 Arguments:
   path                       The file path to the directory containing the emojis, can be relative to the current working directory or absolute.

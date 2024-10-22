@@ -12,7 +12,7 @@ type Args = [['nameOrId', Snowflake]];
 export class GetEmojis extends Command<Args> {
 	public constructor(context: Command.LoaderContext) {
 		super(context, {
-			description: 'Gets a single emojis from the server in JSON format',
+			description: 'Gets a single emojis from the bot application in JSON format',
 			arguments: [
 				{
 					name: 'nameOrId',
