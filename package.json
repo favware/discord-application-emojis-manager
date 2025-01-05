@@ -37,7 +37,7 @@
 		"@sapphire/utilities": "^3.18.1",
 		"@skyra/env-utilities": "^1.3.0",
 		"@skyra/logger": "^2.0.3",
-		"commander": "^12.1.0",
+		"commander": "^13.0.0",
 		"discord-api-types": "0.37.100"
 	},
 	"devDependencies": {
