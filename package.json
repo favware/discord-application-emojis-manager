@@ -31,7 +31,7 @@
 	"dependencies": {
 		"@discordjs/rest": "^2.4.2",
 		"@napi-rs/image": "^1.9.2",
-		"@sapphire/discord-utilities": "^3.4.3",
+		"@sapphire/discord-utilities": "^3.4.4",
 		"@sapphire/node-utilities": "^1.0.2",
 		"@sapphire/pieces": "^4.3.1",
 		"@sapphire/utilities": "^3.18.1",
@@ -47,7 +47,7 @@
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
 		"@types/node": "^22.10.5",
-		"eslint": "^9.17.0",
+		"eslint": "^9.18.0",
 		"eslint-config-neon": "^0.2.4",
 		"eslint-formatter-pretty": "6.0.1",
 		"eslint-plugin-prettier": "^5.2.1",
