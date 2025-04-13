@@ -33,7 +33,7 @@
 		"@napi-rs/image": "^1.9.2",
 		"@sapphire/discord-utilities": "^3.4.4",
 		"@sapphire/node-utilities": "^1.0.2",
-		"@sapphire/pieces": "^4.3.1",
+		"@sapphire/pieces": "^4.3.2",
 		"@sapphire/utilities": "^3.18.2",
 		"@skyra/env-utilities": "^2.0.0",
 		"@skyra/logger": "^2.0.3",
@@ -46,12 +46,12 @@
 		"@favware/cliff-jumper": "^6.0.0",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
-		"@types/node": "^22.14.0",
+		"@types/node": "^22.14.1",
 		"eslint": "^9.24.0",
 		"eslint-config-neon": "^0.2.7",
 		"eslint-formatter-pretty": "6.0.1",
 		"eslint-plugin-prettier": "^5.2.6",
-		"lint-staged": "^15.5.0",
+		"lint-staged": "^15.5.1",
 		"prettier": "^3.5.3",
 		"typescript": "^5.5.4"
 	},
@@ -83,5 +83,5 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"packageManager": "yarn@4.8.1"
+	"packageManager": "yarn@4.9.0"
 }
