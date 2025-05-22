@@ -460,14 +460,14 @@ __metadata:
     "@skyra/logger": "npm:^2.0.3"
     "@types/node": "npm:^22.15.21"
     commander: "npm:^14.0.0"
-    discord-api-types: "npm:0.37.100"
+    discord-api-types: "npm:0.38.8"
     eslint: "npm:^9.27.0"
     eslint-config-neon: "npm:^0.2.7"
     eslint-formatter-pretty: "npm:6.0.1"
     eslint-plugin-prettier: "npm:^5.4.0"
     lint-staged: "npm:^16.0.0"
     prettier: "npm:^3.5.3"
-    typescript: "npm:^5.5.4"
+    typescript: "npm:^5.8.3"
   bin:
     daem: ./dist/index.js
     discord-application-emojis-manager: ./dist/index.js
@@ -2359,10 +2359,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:0.37.100":
-  version: 0.37.100
-  resolution: "discord-api-types@npm:0.37.100"
-  checksum: 10c0/315cfbeb475a98ff711d44cb5dd2aa162730a904692775bf9429c384df597d9b950c20668a2177fd926aed52541d0915688e351906466111aae44d8c2063fb83
+"discord-api-types@npm:0.38.8, discord-api-types@npm:^0.38.1":
+  version: 0.38.8
+  resolution: "discord-api-types@npm:0.38.8"
+  checksum: 10c0/50146faf9207c3e5b36a24ae17129367c0af192b492541fffe875cfdb1e7dd2b8fce1a1a521a85bf27e4643b9238d83c9abdbebf97f1057f2a4e8b46995da172
   languageName: node
   linkType: hard
 
@@ -6839,7 +6839,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5, typescript@npm:^5.4.2, typescript@npm:^5.5.4":
+"typescript@npm:^5, typescript@npm:^5.4.2":
   version: 5.8.2
   resolution: "typescript@npm:5.8.2"
   bin:
@@ -6849,13 +6849,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.4.2#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.5.4#optional!builtin<compat/typescript>":
+"typescript@npm:^5.8.3":
+  version: 5.8.3
+  resolution: "typescript@npm:5.8.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/5f8bb01196e542e64d44db3d16ee0e4063ce4f3e3966df6005f2588e86d91c03e1fb131c2581baf0fb65ee79669eea6e161cd448178986587e9f6844446dbb48
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A^5#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.4.2#optional!builtin<compat/typescript>":
   version: 5.8.2
   resolution: "typescript@patch:typescript@npm%3A5.8.2#optional!builtin<compat/typescript>::version=5.8.2&hash=5786d5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10c0/5448a08e595cc558ab321e49d4cac64fb43d1fa106584f6ff9a8d8e592111b373a995a1d5c7f3046211c8a37201eb6d0f1566f15cdb7a62a5e3be01d087848e2
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A^5.8.3#optional!builtin<compat/typescript>":
+  version: 5.8.3
+  resolution: "typescript@patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/39117e346ff8ebd87ae1510b3a77d5d92dae5a89bde588c747d25da5c146603a99c8ee588c7ef80faaf123d89ed46f6dbd918d534d641083177d5fac38b8a1cb
   languageName: node
   linkType: hard
 

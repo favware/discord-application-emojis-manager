@@ -38,7 +38,7 @@
 		"@skyra/env-utilities": "^2.0.0",
 		"@skyra/logger": "^2.0.3",
 		"commander": "^14.0.0",
-		"discord-api-types": "0.37.100"
+		"discord-api-types": "0.38.8"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^19.8.1",
@@ -53,10 +53,9 @@
 		"eslint-plugin-prettier": "^5.4.0",
 		"lint-staged": "^16.0.0",
 		"prettier": "^3.5.3",
-		"typescript": "^5.5.4"
+		"typescript": "^5.8.3"
 	},
 	"resolutions": {
-		"discord-api-types": "0.37.100",
 		"@angular-eslint/eslint-plugin-template": "npm:@favware/skip-dependency@latest",
 		"@angular-eslint/eslint-plugin": "npm:@favware/skip-dependency@latest",
 		"@angular-eslint/template-parser": "npm:@favware/skip-dependency@latest",
