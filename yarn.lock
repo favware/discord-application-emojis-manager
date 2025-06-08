@@ -452,13 +452,13 @@ __metadata:
     "@napi-rs/image": "npm:^1.9.2"
     "@sapphire/discord-utilities": "npm:^3.5.0"
     "@sapphire/node-utilities": "npm:^1.0.2"
-    "@sapphire/pieces": "npm:^4.4.0"
+    "@sapphire/pieces": "npm:^4.4.1"
     "@sapphire/prettier-config": "npm:^2.0.0"
     "@sapphire/ts-config": "npm:^5.0.1"
     "@sapphire/utilities": "npm:^3.18.2"
     "@skyra/env-utilities": "npm:^2.0.1"
     "@skyra/logger": "npm:^2.0.4"
-    "@types/node": "npm:^22.15.29"
+    "@types/node": "npm:^22.15.30"
     commander: "npm:^14.0.0"
     discord-api-types: "npm:0.38.8"
     eslint: "npm:^9.28.0"
@@ -928,14 +928,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/pieces@npm:^4.4.0":
-  version: 4.4.0
-  resolution: "@sapphire/pieces@npm:4.4.0"
+"@sapphire/pieces@npm:^4.4.1":
+  version: 4.4.1
+  resolution: "@sapphire/pieces@npm:4.4.1"
   dependencies:
     "@discordjs/collection": "npm:^2.1.1"
     "@sapphire/utilities": "npm:^3.18.2"
     tslib: "npm:^2.8.1"
-  checksum: 10c0/857cffd510540d404c910ff0d8c5d0c77bd3f1c3ad70ea1b27443e12eac277e34fe1e7234ce058590f1abbd21c3e0338f63e0cfb031df9c93c535221e8f59e75
+  checksum: 10c0/e70d1e8bf7f80a7e5f974fd6d23c91340025333ca9e7e17b34b69374af8e2a33016c964d10bd8d93cd93df82752f5d36c98623d771a88cf1a5c0fbcd89d0e6b3
   languageName: node
   linkType: hard
 
@@ -1194,12 +1194,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^22.0.0, @types/node@npm:^22.15.29":
-  version: 22.15.29
-  resolution: "@types/node@npm:22.15.29"
+"@types/node@npm:*, @types/node@npm:^22.0.0, @types/node@npm:^22.15.30":
+  version: 22.15.30
+  resolution: "@types/node@npm:22.15.30"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10c0/602cc88c6150780cd9b5b44604754e0ce13983ae876a538861d6ecfb1511dff289e5576fffd26c841cde2142418d4bb76e2a72a382b81c04557ccb17cff29e1d
+  checksum: 10c0/ca330ac0e7fd502686d6df115fcc606aba46fd334220f749bbba2f639accdadcb23f7900603ceccdc8240be736739cad5c0b87c0fa92c9255a4dff245f07d664
   languageName: node
   linkType: hard
 
