@@ -29,7 +29,7 @@
 		"check-update": "cliff-jumper --dry-run"
 	},
 	"dependencies": {
-		"@discordjs/rest": "^2.5.0",
+		"@discordjs/rest": "^2.5.1",
 		"@napi-rs/image": "^1.9.2",
 		"@sapphire/discord-utilities": "^3.5.0",
 		"@sapphire/node-utilities": "^1.0.2",
@@ -46,11 +46,11 @@
 		"@favware/cliff-jumper": "^6.0.0",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
-		"@types/node": "^22.15.31",
+		"@types/node": "^22.15.32",
 		"eslint": "^9.29.0",
 		"eslint-config-neon": "^0.2.7",
 		"eslint-formatter-pretty": "6.0.1",
-		"eslint-plugin-prettier": "^5.4.1",
+		"eslint-plugin-prettier": "^5.5.0",
 		"lint-staged": "^16.1.2",
 		"prettier": "^3.5.3",
 		"typescript": "^5.8.3"
