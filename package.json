@@ -49,7 +49,7 @@
 		"@types/node": "^22.18.6",
 		"eslint": "^9.36.0",
 		"eslint-config-neon": "^0.2.7",
-		"eslint-formatter-pretty": "6.0.1",
+		"eslint-formatter-pretty": "7.0.0",
 		"eslint-plugin-prettier": "^5.5.4",
 		"lint-staged": "^16.2.2",
 		"prettier": "^3.6.2",
