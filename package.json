@@ -37,7 +37,7 @@
 		"@sapphire/utilities": "^3.18.2",
 		"@skyra/env-utilities": "^2.0.1",
 		"@skyra/logger": "^2.0.4",
-		"commander": "^14.0.1",
+		"commander": "^14.0.2",
 		"discord-api-types": "0.38.8"
 	},
 	"devDependencies": {
@@ -46,12 +46,12 @@
 		"@favware/cliff-jumper": "^6.0.0",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
-		"@types/node": "^22.18.11",
+		"@types/node": "^22.18.12",
 		"eslint": "^9.38.0",
 		"eslint-config-neon": "^0.2.9",
 		"eslint-formatter-pretty": "7.0.0",
 		"eslint-plugin-prettier": "^5.5.4",
-		"lint-staged": "^16.2.4",
+		"lint-staged": "^16.2.6",
 		"prettier": "^3.6.2",
 		"typescript": "^5.8.3"
 	},
