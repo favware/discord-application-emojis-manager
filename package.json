@@ -46,7 +46,7 @@
 		"@favware/cliff-jumper": "^6.0.0",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
-		"@types/node": "^24.10.0",
+		"@types/node": "^24.10.1",
 		"eslint": "^9.39.1",
 		"eslint-config-neon": "^0.2.9",
 		"eslint-formatter-pretty": "7.0.0",
