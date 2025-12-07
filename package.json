@@ -41,8 +41,8 @@
 		"discord-api-types": "0.38.8"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^20.1.0",
-		"@commitlint/config-conventional": "^20.0.0",
+		"@commitlint/cli": "^20.2.0",
+		"@commitlint/config-conventional": "^20.2.0",
 		"@favware/cliff-jumper": "^6.0.0",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.3",
@@ -52,7 +52,7 @@
 		"eslint-formatter-pretty": "7.0.0",
 		"eslint-plugin-prettier": "^5.5.4",
 		"lint-staged": "^16.2.7",
-		"prettier": "^3.7.3",
+		"prettier": "^3.7.4",
 		"typescript": "^5.8.3"
 	},
 	"resolutions": {
