@@ -427,31 +427,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emnapi/core@npm:^1.4.3, @emnapi/core@npm:^1.4.5":
-  version: 1.4.5
-  resolution: "@emnapi/core@npm:1.4.5"
+"@emnapi/core@npm:^1.4.3, @emnapi/core@npm:^1.7.1":
+  version: 1.7.1
+  resolution: "@emnapi/core@npm:1.7.1"
   dependencies:
-    "@emnapi/wasi-threads": "npm:1.0.4"
+    "@emnapi/wasi-threads": "npm:1.1.0"
     tslib: "npm:^2.4.0"
-  checksum: 10c0/da4a57f65f325d720d0e0d1a9c6618b90c4c43a5027834a110476984e1d47c95ebaed4d316b5dddb9c0ed9a493ffeb97d1934f9677035f336d8a36c1f3b2818f
+  checksum: 10c0/f3740be23440b439333e3ae3832163f60c96c4e35337f3220ceba88f36ee89a57a871d27c94eb7a9ff98a09911ed9a2089e477ab549f4d30029f8b907f84a351
   languageName: node
   linkType: hard
 
-"@emnapi/runtime@npm:^1.4.3, @emnapi/runtime@npm:^1.4.5":
-  version: 1.4.5
-  resolution: "@emnapi/runtime@npm:1.4.5"
+"@emnapi/runtime@npm:^1.4.3, @emnapi/runtime@npm:^1.7.1":
+  version: 1.7.1
+  resolution: "@emnapi/runtime@npm:1.7.1"
   dependencies:
     tslib: "npm:^2.4.0"
-  checksum: 10c0/37a0278be5ac81e918efe36f1449875cbafba947039c53c65a1f8fc238001b866446fc66041513b286baaff5d6f9bec667f5164b3ca481373a8d9cb65bfc984b
+  checksum: 10c0/26b851cd3e93877d8732a985a2ebf5152325bbacc6204ef5336a47359dedcc23faeb08cdfcb8bb389b5401b3e894b882bc1a1e55b4b7c1ed1e67c991a760ddd5
   languageName: node
   linkType: hard
 
-"@emnapi/wasi-threads@npm:1.0.4":
-  version: 1.0.4
-  resolution: "@emnapi/wasi-threads@npm:1.0.4"
+"@emnapi/wasi-threads@npm:1.1.0":
+  version: 1.1.0
+  resolution: "@emnapi/wasi-threads@npm:1.1.0"
   dependencies:
     tslib: "npm:^2.4.0"
-  checksum: 10c0/2c91a53e62f875800baf035c4d42c9c0d18e5afd9a31ca2aac8b435aeaeaeaac386b5b3d0d0e70aa7a5a9852bbe05106b1f680cd82cce03145c703b423d41313
+  checksum: 10c0/e6d54bf2b1e64cdd83d2916411e44e579b6ae35d5def0dea61a3c452d9921373044dff32a8b8473ae60c80692bdc39323e98b96a3f3d87ba6886b24dd0ef7ca1
   languageName: node
   linkType: hard
 
@@ -564,10 +564,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.39.1":
-  version: 9.39.1
-  resolution: "@eslint/js@npm:9.39.1"
-  checksum: 10c0/6f7f26f8cdb7ad6327bbf9741973b6278eb946f18f70e35406e88194b0d5c522d0547a34a02f2a208eec95c5d1388cdf7ccb20039efd2e4cb6655615247a50f1
+"@eslint/js@npm:9.39.2":
+  version: 9.39.2
+  resolution: "@eslint/js@npm:9.39.2"
+  checksum: 10c0/00f51c52b04ac79faebfaa65a9652b2093b9c924e945479f1f3945473f78aee83cbc76c8d70bbffbf06f7024626575b16d97b66eab16182e1d0d39daff2f26f5
   languageName: node
   linkType: hard
 
@@ -640,7 +640,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:^20.2.0"
     "@discordjs/rest": "npm:^2.6.0"
     "@favware/cliff-jumper": "npm:^6.0.0"
-    "@napi-rs/image": "npm:^1.11.2"
+    "@napi-rs/image": "npm:^1.12.0"
     "@sapphire/discord-utilities": "npm:^3.5.0"
     "@sapphire/node-utilities": "npm:^1.0.2"
     "@sapphire/pieces": "npm:^4.4.1"
@@ -649,10 +649,10 @@ __metadata:
     "@sapphire/utilities": "npm:^3.18.2"
     "@skyra/env-utilities": "npm:^2.0.1"
     "@skyra/logger": "npm:^2.0.4"
-    "@types/node": "npm:^24.10.1"
+    "@types/node": "npm:^24.10.4"
     commander: "npm:^14.0.2"
     discord-api-types: "npm:0.38.8"
-    eslint: "npm:^9.39.1"
+    eslint: "npm:^9.39.2"
     eslint-config-neon: "npm:^0.2.9"
     eslint-formatter-pretty: "npm:7.0.0"
     eslint-plugin-prettier: "npm:^5.5.4"
@@ -796,116 +796,116 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@napi-rs/image-android-arm64@npm:1.11.2":
-  version: 1.11.2
-  resolution: "@napi-rs/image-android-arm64@npm:1.11.2"
+"@napi-rs/image-android-arm64@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@napi-rs/image-android-arm64@npm:1.12.0"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"@napi-rs/image-darwin-arm64@npm:1.11.2":
-  version: 1.11.2
-  resolution: "@napi-rs/image-darwin-arm64@npm:1.11.2"
+"@napi-rs/image-darwin-arm64@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@napi-rs/image-darwin-arm64@npm:1.12.0"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@napi-rs/image-darwin-x64@npm:1.11.2":
-  version: 1.11.2
-  resolution: "@napi-rs/image-darwin-x64@npm:1.11.2"
+"@napi-rs/image-darwin-x64@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@napi-rs/image-darwin-x64@npm:1.12.0"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@napi-rs/image-freebsd-x64@npm:1.11.2":
-  version: 1.11.2
-  resolution: "@napi-rs/image-freebsd-x64@npm:1.11.2"
+"@napi-rs/image-freebsd-x64@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@napi-rs/image-freebsd-x64@npm:1.12.0"
   conditions: os=freebsd & cpu=x64
   languageName: node
   linkType: hard
 
-"@napi-rs/image-linux-arm-gnueabihf@npm:1.11.2":
-  version: 1.11.2
-  resolution: "@napi-rs/image-linux-arm-gnueabihf@npm:1.11.2"
+"@napi-rs/image-linux-arm-gnueabihf@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@napi-rs/image-linux-arm-gnueabihf@npm:1.12.0"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@napi-rs/image-linux-arm64-gnu@npm:1.11.2":
-  version: 1.11.2
-  resolution: "@napi-rs/image-linux-arm64-gnu@npm:1.11.2"
+"@napi-rs/image-linux-arm64-gnu@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@napi-rs/image-linux-arm64-gnu@npm:1.12.0"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@napi-rs/image-linux-arm64-musl@npm:1.11.2":
-  version: 1.11.2
-  resolution: "@napi-rs/image-linux-arm64-musl@npm:1.11.2"
+"@napi-rs/image-linux-arm64-musl@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@napi-rs/image-linux-arm64-musl@npm:1.12.0"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@napi-rs/image-linux-x64-gnu@npm:1.11.2":
-  version: 1.11.2
-  resolution: "@napi-rs/image-linux-x64-gnu@npm:1.11.2"
+"@napi-rs/image-linux-x64-gnu@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@napi-rs/image-linux-x64-gnu@npm:1.12.0"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@napi-rs/image-linux-x64-musl@npm:1.11.2":
-  version: 1.11.2
-  resolution: "@napi-rs/image-linux-x64-musl@npm:1.11.2"
+"@napi-rs/image-linux-x64-musl@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@napi-rs/image-linux-x64-musl@npm:1.12.0"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@napi-rs/image-wasm32-wasi@npm:1.11.2":
-  version: 1.11.2
-  resolution: "@napi-rs/image-wasm32-wasi@npm:1.11.2"
+"@napi-rs/image-wasm32-wasi@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@napi-rs/image-wasm32-wasi@npm:1.12.0"
   dependencies:
-    "@napi-rs/wasm-runtime": "npm:^1.0.3"
+    "@napi-rs/wasm-runtime": "npm:^1.1.0"
   conditions: cpu=wasm32
   languageName: node
   linkType: hard
 
-"@napi-rs/image-win32-arm64-msvc@npm:1.11.2":
-  version: 1.11.2
-  resolution: "@napi-rs/image-win32-arm64-msvc@npm:1.11.2"
+"@napi-rs/image-win32-arm64-msvc@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@napi-rs/image-win32-arm64-msvc@npm:1.12.0"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@napi-rs/image-win32-ia32-msvc@npm:1.11.2":
-  version: 1.11.2
-  resolution: "@napi-rs/image-win32-ia32-msvc@npm:1.11.2"
+"@napi-rs/image-win32-ia32-msvc@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@napi-rs/image-win32-ia32-msvc@npm:1.12.0"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@napi-rs/image-win32-x64-msvc@npm:1.11.2":
-  version: 1.11.2
-  resolution: "@napi-rs/image-win32-x64-msvc@npm:1.11.2"
+"@napi-rs/image-win32-x64-msvc@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@napi-rs/image-win32-x64-msvc@npm:1.12.0"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@napi-rs/image@npm:^1.11.2":
-  version: 1.11.2
-  resolution: "@napi-rs/image@npm:1.11.2"
+"@napi-rs/image@npm:^1.12.0":
+  version: 1.12.0
+  resolution: "@napi-rs/image@npm:1.12.0"
   dependencies:
-    "@napi-rs/image-android-arm64": "npm:1.11.2"
-    "@napi-rs/image-darwin-arm64": "npm:1.11.2"
-    "@napi-rs/image-darwin-x64": "npm:1.11.2"
-    "@napi-rs/image-freebsd-x64": "npm:1.11.2"
-    "@napi-rs/image-linux-arm-gnueabihf": "npm:1.11.2"
-    "@napi-rs/image-linux-arm64-gnu": "npm:1.11.2"
-    "@napi-rs/image-linux-arm64-musl": "npm:1.11.2"
-    "@napi-rs/image-linux-x64-gnu": "npm:1.11.2"
-    "@napi-rs/image-linux-x64-musl": "npm:1.11.2"
-    "@napi-rs/image-wasm32-wasi": "npm:1.11.2"
-    "@napi-rs/image-win32-arm64-msvc": "npm:1.11.2"
-    "@napi-rs/image-win32-ia32-msvc": "npm:1.11.2"
-    "@napi-rs/image-win32-x64-msvc": "npm:1.11.2"
+    "@napi-rs/image-android-arm64": "npm:1.12.0"
+    "@napi-rs/image-darwin-arm64": "npm:1.12.0"
+    "@napi-rs/image-darwin-x64": "npm:1.12.0"
+    "@napi-rs/image-freebsd-x64": "npm:1.12.0"
+    "@napi-rs/image-linux-arm-gnueabihf": "npm:1.12.0"
+    "@napi-rs/image-linux-arm64-gnu": "npm:1.12.0"
+    "@napi-rs/image-linux-arm64-musl": "npm:1.12.0"
+    "@napi-rs/image-linux-x64-gnu": "npm:1.12.0"
+    "@napi-rs/image-linux-x64-musl": "npm:1.12.0"
+    "@napi-rs/image-wasm32-wasi": "npm:1.12.0"
+    "@napi-rs/image-win32-arm64-msvc": "npm:1.12.0"
+    "@napi-rs/image-win32-ia32-msvc": "npm:1.12.0"
+    "@napi-rs/image-win32-x64-msvc": "npm:1.12.0"
   dependenciesMeta:
     "@napi-rs/image-android-arm64":
       optional: true
@@ -933,7 +933,7 @@ __metadata:
       optional: true
     "@napi-rs/image-win32-x64-msvc":
       optional: true
-  checksum: 10c0/be1f473a940f133ad15c65a7830c2d1b6d473a9c781f6c39b7ea3943fbb8d59c2975125471ef739eb701efe429b1b95ff98ca7ec2655f703efefcf96c4476fdc
+  checksum: 10c0/35e9db81b29c1d7bcaaa48f929da1920cb1abf8bf169b3515d1f8fdaa4755063eb8c3c37eefb23dd47619587b199d4d9665f708e690ff827e0d610d0cc084d07
   languageName: node
   linkType: hard
 
@@ -948,14 +948,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@napi-rs/wasm-runtime@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "@napi-rs/wasm-runtime@npm:1.0.3"
+"@napi-rs/wasm-runtime@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@napi-rs/wasm-runtime@npm:1.1.0"
   dependencies:
-    "@emnapi/core": "npm:^1.4.5"
-    "@emnapi/runtime": "npm:^1.4.5"
-    "@tybys/wasm-util": "npm:^0.10.0"
-  checksum: 10c0/7918d82477e75931b6e35bb003464382eb93e526362f81a98bf8610407a67b10f4d041931015ad48072c89db547deb7e471dfb91f4ab11ac63a24d8580297f75
+    "@emnapi/core": "npm:^1.7.1"
+    "@emnapi/runtime": "npm:^1.7.1"
+    "@tybys/wasm-util": "npm:^0.10.1"
+  checksum: 10c0/ee351052123bfc635c4cef03ac273a686522394ccd513b1e5b7b3823cecd6abb4a31f23a3a962933192b87eb7b7c3eb3def7748bd410edc66f932d90cf44e9ab
   languageName: node
   linkType: hard
 
@@ -1334,12 +1334,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tybys/wasm-util@npm:^0.10.0":
-  version: 0.10.0
-  resolution: "@tybys/wasm-util@npm:0.10.0"
+"@tybys/wasm-util@npm:^0.10.0, @tybys/wasm-util@npm:^0.10.1":
+  version: 0.10.1
+  resolution: "@tybys/wasm-util@npm:0.10.1"
   dependencies:
     tslib: "npm:^2.4.0"
-  checksum: 10c0/044feba55c1e2af703aa4946139969badb183ce1a659a75ed60bc195a90e73a3f3fc53bcd643497c9954597763ddb051fec62f80962b2ca6fc716ba897dc696e
+  checksum: 10c0/b255094f293794c6d2289300c5fbcafbb5532a3aed3a5ffd2f8dc1828e639b88d75f6a376dd8f94347a44813fd7a7149d8463477a9a49525c8b2dcaa38c2d1e8
   languageName: node
   linkType: hard
 
@@ -1460,12 +1460,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^24.10.1":
-  version: 24.10.1
-  resolution: "@types/node@npm:24.10.1"
+"@types/node@npm:*, @types/node@npm:^24.10.4":
+  version: 24.10.4
+  resolution: "@types/node@npm:24.10.4"
   dependencies:
     undici-types: "npm:~7.16.0"
-  checksum: 10c0/d6bca7a78f550fbb376f236f92b405d676003a8a09a1b411f55920ef34286ee3ee51f566203920e835478784df52662b5b2af89159d9d319352e9ea21801c002
+  checksum: 10c0/069639cb7233ee747df1897b5e784f6b6c5da765c96c94773c580aac888fa1a585048d2a6e95eb8302d89c7a9df75801c8b5a0b7d0221d4249059cf09a5f4228
   languageName: node
   linkType: hard
 
@@ -3462,9 +3462,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.39.1":
-  version: 9.39.1
-  resolution: "eslint@npm:9.39.1"
+"eslint@npm:^9.39.2":
+  version: 9.39.2
+  resolution: "eslint@npm:9.39.2"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.8.0"
     "@eslint-community/regexpp": "npm:^4.12.1"
@@ -3472,7 +3472,7 @@ __metadata:
     "@eslint/config-helpers": "npm:^0.4.2"
     "@eslint/core": "npm:^0.17.0"
     "@eslint/eslintrc": "npm:^3.3.1"
-    "@eslint/js": "npm:9.39.1"
+    "@eslint/js": "npm:9.39.2"
     "@eslint/plugin-kit": "npm:^0.4.1"
     "@humanfs/node": "npm:^0.16.6"
     "@humanwhocodes/module-importer": "npm:^1.0.1"
@@ -3507,7 +3507,7 @@ __metadata:
       optional: true
   bin:
     eslint: bin/eslint.js
-  checksum: 10c0/59b2480639404ba24578ca480f973683b87b7aac8aa7e349240474a39067804fd13cd8b9cb22fee074170b8c7c563b57bab703ec0f0d3f81ea017e5d2cad299d
+  checksum: 10c0/bb88ca8fd16bb7e1ac3e13804c54d41c583214460c0faa7b3e7c574e69c5600c7122295500fb4b0c06067831111db740931e98da1340329527658e1cf80073d3
   languageName: node
   linkType: hard
 
