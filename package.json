@@ -31,7 +31,7 @@
 	"dependencies": {
 		"@discordjs/rest": "^2.6.0",
 		"@napi-rs/image": "^1.12.0",
-		"@sapphire/discord-utilities": "^3.5.0",
+		"@sapphire/discord-utilities": "^4.0.0",
 		"@sapphire/node-utilities": "^1.0.2",
 		"@sapphire/pieces": "^4.4.1",
 		"@sapphire/utilities": "^3.18.2",

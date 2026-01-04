@@ -641,7 +641,7 @@ __metadata:
     "@discordjs/rest": "npm:^2.6.0"
     "@favware/cliff-jumper": "npm:^6.0.0"
     "@napi-rs/image": "npm:^1.12.0"
-    "@sapphire/discord-utilities": "npm:^3.5.0"
+    "@sapphire/discord-utilities": "npm:^4.0.0"
     "@sapphire/node-utilities": "npm:^1.0.2"
     "@sapphire/pieces": "npm:^4.4.1"
     "@sapphire/prettier-config": "npm:^2.0.0"
@@ -1177,12 +1177,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/discord-utilities@npm:^3.5.0":
-  version: 3.5.0
-  resolution: "@sapphire/discord-utilities@npm:3.5.0"
+"@sapphire/discord-utilities@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@sapphire/discord-utilities@npm:4.0.0"
   dependencies:
-    discord-api-types: "npm:^0.38.1"
-  checksum: 10c0/cb404a975a7aad0f09e18a9a7b0cbcb22fa6863079602b7975c8a618642e29d2f9494eb3797d8667632b46792a89ce68236d2764c66b5c3a569d02ecc00e2e92
+    discord-api-types: "npm:^0.38.30"
+  checksum: 10c0/f46bb98f5b2266ab950fbf1af41b1ca057b7f1431f959b5f7b6ce63578ff7deeaeb8bb130a3ae465a304c5636e719ca83558397399dd579ee1732cf3025ee5b4
   languageName: node
   linkType: hard
 
@@ -2723,10 +2723,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.38.1, discord-api-types@npm:^0.38.16":
-  version: 0.38.21
-  resolution: "discord-api-types@npm:0.38.21"
-  checksum: 10c0/e20e5a4ad6db6dc9b436d32af25ef85f7562348ce695a5c8f1097dd29850b5918fe42a6754c97b53a532c5225ea51a8f396cf17aded86babce02977a68380fbe
+"discord-api-types@npm:^0.38.16, discord-api-types@npm:^0.38.30":
+  version: 0.38.37
+  resolution: "discord-api-types@npm:0.38.37"
+  checksum: 10c0/44edabc383d7ee7d1ca46a69fa33e89991764a4e0843c3fce6ba94ca346d7c4ea72402904d17e61499e55a5fcdc1a0206966a6903cc39bbdb2ee8326eb358371
   languageName: node
   linkType: hard
 
