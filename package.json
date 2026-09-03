@@ -29,30 +29,30 @@
 		"check-update": "cliff-jumper --dry-run"
 	},
 	"dependencies": {
-		"@discordjs/rest": "^2.6.0",
-		"@napi-rs/image": "^1.12.0",
+		"@discordjs/rest": "^2.6.3",
+		"@napi-rs/image": "^1.14.0",
 		"@sapphire/discord-utilities": "^3.5.0",
 		"@sapphire/node-utilities": "^1.0.2",
 		"@sapphire/pieces": "^4.4.1",
 		"@sapphire/utilities": "^3.18.2",
 		"@skyra/env-utilities": "^2.0.1",
 		"@skyra/logger": "^2.0.4",
-		"commander": "^14.0.2",
+		"commander": "^14.0.3",
 		"discord-api-types": "0.38.8"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^20.3.0",
-		"@commitlint/config-conventional": "^20.3.0",
-		"@favware/cliff-jumper": "^6.0.0",
+		"@commitlint/cli": "^20.5.3",
+		"@commitlint/config-conventional": "^20.5.3",
+		"@favware/cliff-jumper": "^6.1.0",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.3",
-		"@types/node": "^24.10.4",
-		"eslint": "^9.39.2",
-		"eslint-config-neon": "^0.2.9",
-		"eslint-formatter-pretty": "7.0.0",
-		"eslint-plugin-prettier": "^5.5.4",
-		"lint-staged": "^16.2.7",
-		"prettier": "^3.7.4",
+		"@types/node": "^24.13.3",
+		"eslint": "^9.39.5",
+		"eslint-config-neon": "^0.5.4",
+		"eslint-formatter-pretty": "7.1.0",
+		"eslint-plugin-prettier": "^5.5.6",
+		"lint-staged": "^16.4.0",
+		"prettier": "^3.9.6",
 		"typescript": "^5.8.3"
 	},
 	"resolutions": {
@@ -82,5 +82,5 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"packageManager": "yarn@4.12.0"
+	"packageManager": "yarn@4.18.0"
 }
