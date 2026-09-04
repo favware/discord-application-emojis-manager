@@ -47,7 +47,7 @@
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.3",
 		"@types/node": "^24.10.4",
-		"eslint": "^9.39.2",
+		"eslint": "^10.10.0",
 		"eslint-config-neon": "^0.2.9",
 		"eslint-formatter-pretty": "7.0.0",
 		"eslint-plugin-prettier": "^5.5.4",
