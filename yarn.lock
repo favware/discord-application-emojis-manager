@@ -650,7 +650,7 @@ __metadata:
     "@skyra/env-utilities": "npm:^2.0.1"
     "@skyra/logger": "npm:^2.0.4"
     "@types/node": "npm:^24.10.4"
-    commander: "npm:^14.0.2"
+    commander: "npm:^15.0.0"
     discord-api-types: "npm:0.38.8"
     eslint: "npm:^9.39.2"
     eslint-config-neon: "npm:^0.2.9"
@@ -2419,6 +2419,13 @@ __metadata:
   version: 14.0.2
   resolution: "commander@npm:14.0.2"
   checksum: 10c0/245abd1349dbad5414cb6517b7b5c584895c02c4f7836ff5395f301192b8566f9796c82d7bd6c92d07eba8775fe4df86602fca5d86d8d10bcc2aded1e21c2aeb
+  languageName: node
+  linkType: hard
+
+"commander@npm:^15.0.0":
+  version: 15.0.0
+  resolution: "commander@npm:15.0.0"
+  checksum: 10c0/539229c171914ea1ccd45ee5f10d924289a12a684ea3a7a44147abe54003c35ed6de9ae4ad198d88c29fdf403dca0428451a388234e6dc01b6faa978fb207206
   languageName: node
   linkType: hard
 
