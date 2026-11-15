@@ -642,7 +642,7 @@ __metadata:
     "@favware/cliff-jumper": "npm:^6.0.0"
     "@napi-rs/image": "npm:^1.12.0"
     "@sapphire/discord-utilities": "npm:^3.5.0"
-    "@sapphire/node-utilities": "npm:^1.0.2"
+    "@sapphire/node-utilities": "npm:^2.0.0"
     "@sapphire/pieces": "npm:^4.4.1"
     "@sapphire/prettier-config": "npm:^2.0.0"
     "@sapphire/ts-config": "npm:^5.0.3"
@@ -1186,10 +1186,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/node-utilities@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@sapphire/node-utilities@npm:1.0.2"
-  checksum: 10c0/65ec33badf849fb7d23ba6387567c5d2bea488463e5af0e46f9a348efb08346c5559d32a953f279cf4b1669994d774a25471398c26e415ec202e7da62c04c981
+"@sapphire/node-utilities@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@sapphire/node-utilities@npm:2.0.0"
+  checksum: 10c0/5b9751ec9475975cfd9f0b0accf07ae57394912e8e792395ee74d56727603fa9f365a27d576454553368827338dae29084876fc3d96b9712e77fa9dc95bab50e
   languageName: node
   linkType: hard
 
