@@ -44,7 +44,7 @@
 		"@commitlint/cli": "^20.3.0",
 		"@commitlint/config-conventional": "^20.3.0",
 		"@favware/cliff-jumper": "^6.0.0",
-		"@sapphire/prettier-config": "^2.0.0",
+		"@sapphire/prettier-config": "^3.0.0",
 		"@sapphire/ts-config": "^5.0.3",
 		"@types/node": "^24.10.4",
 		"eslint": "^9.39.2",
